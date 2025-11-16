@@ -260,19 +260,19 @@ export default function DonatePage() {
               &ldquo;Donate now&rdquo; to head directly to their secure giving page.
             </p>
           </div>
-          <Card className="bg-white/5 text-slate-100">
+          <Card className="bg-white text-slate-900 shadow-2xl shadow-emerald-500/10">
             <CardHeader className="space-y-4">
-              <CardTitle className="text-2xl text-white">How we vet organizations</CardTitle>
-              <CardDescription className="text-slate-200/90">
+              <CardTitle className="text-2xl">How we vet organizations</CardTitle>
+              <CardDescription className="text-slate-600">
                 Every listing is sourced from public CRA filings, community recommendations, and the organization&apos;s own transparency
                 reports. We prioritize groups with clear missions, measurable outcomes, and active governance boards.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid gap-3 text-sm text-slate-300">
+            <CardContent className="grid gap-3 text-sm text-slate-600">
               {givingPrinciples.map((principle) => (
-                <div key={principle.title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-base font-semibold text-white">{principle.title}</p>
-                  <p className="text-slate-200/80">{principle.copy}</p>
+                <div key={principle.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="text-base font-semibold text-slate-900">{principle.title}</p>
+                  <p className="text-slate-600">{principle.copy}</p>
                 </div>
               ))}
             </CardContent>
@@ -285,29 +285,26 @@ export default function DonatePage() {
             return (
               <Card
                 key={organization.name}
-                className="group flex flex-col justify-between border border-white/10 bg-white/5 text-slate-100 transition duration-300 hover:border-emerald-400/40 hover:bg-white/10"
+                className="group flex flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40"
               >
                 <CardHeader className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="rounded-2xl bg-emerald-500/15 p-3 text-emerald-300">
+                      <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-600">
                         <Icon />
                       </div>
                       <div>
-                        <CardTitle className="text-2xl text-white">{organization.name}</CardTitle>
-                        <CardDescription className="text-slate-200/80">{organization.focus}</CardDescription>
+                        <CardTitle className="text-2xl">{organization.name}</CardTitle>
+                        <CardDescription className="text-slate-600">{organization.focus}</CardDescription>
                       </div>
                     </div>
-                    <Badge className="bg-emerald-500/15 text-emerald-200 ring-emerald-300/40">CRA Registered</Badge>
+                    <Badge className="bg-emerald-50 text-emerald-700 ring-emerald-200">CRA Registered</Badge>
                   </div>
-                  <p className="text-base text-slate-200/90">{organization.description}</p>
+                  <p className="text-base text-slate-700">{organization.description}</p>
                 </CardHeader>
-                <CardContent className="flex flex-col gap-4 border-t border-white/10 pt-4 text-sm text-slate-300 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-slate-200/80">{organization.impact}</p>
-                  <Button
-                    variant="outline"
-                    className="border-white/30 bg-white text-slate-900 hover:bg-slate-100 group-hover:bg-emerald-100 group-hover:text-emerald-900"
-                  >
+                <CardContent className="flex flex-col gap-4 border-t border-slate-100 pt-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-slate-700">{organization.impact}</p>
+                  <Button variant="solid" className="bg-emerald-600 text-white hover:bg-emerald-500 group-hover:bg-emerald-500">
                     <a href={organization.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
                       Donate now
                       <ArrowUpRightIcon />
