@@ -223,7 +223,7 @@ export default function DonatePage() {
         <section className="space-y-8">
           <div className="flex flex-wrap items-center gap-3">
             <Badge className="bg-white/10 text-emerald-200 ring-emerald-300/30">Trusted Vancouver Causes</Badge>
-            <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
+            <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
               Curated giving guide
             </Badge>
           </div>
@@ -255,7 +255,7 @@ export default function DonatePage() {
 
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
-            <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
+            <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
               10 reputable nonprofits
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Where your donation goes further.</h2>

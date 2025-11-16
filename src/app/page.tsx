@@ -96,7 +96,7 @@ export default function Home() {
           <div className="space-y-10">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="bg-white/10 text-emerald-200 ring-emerald-300/30">Community-Led Initiative</Badge>
-              <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
+              <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
                 Vancouver, British Columbia
               </Badge>
             </div>
@@ -160,7 +160,7 @@ export default function Home() {
 
         <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
           <div className="space-y-4 text-center sm:text-left">
-            <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-slate-200 ring-white/30 sm:mx-0">
+            <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-white ring-white/40 sm:mx-0">
               Vancouver in focus
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Grounded in the places people care about.</h2>
@@ -171,7 +171,10 @@ export default function Home() {
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {vancouverScenes.map((scene) => (
-              <Card key={scene.title} className="overflow-hidden border border-white/10 bg-white/10 text-slate-100">
+              <Card
+                key={scene.title}
+                className="overflow-hidden border border-slate-200 bg-white text-slate-900 shadow-md transition duration-300 hover:shadow-emerald-100"
+              >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={scene.src}
@@ -182,8 +185,8 @@ export default function Home() {
                   />
                 </div>
                 <CardHeader className="space-y-2">
-                  <CardTitle className="text-2xl text-white">{scene.title}</CardTitle>
-                  <CardDescription className="text-slate-200/90">{scene.description}</CardDescription>
+                  <CardTitle className="text-2xl text-slate-900">{scene.title}</CardTitle>
+                  <CardDescription className="text-slate-600">{scene.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -192,7 +195,7 @@ export default function Home() {
 
         <section className="space-y-12">
           <div className="max-w-3xl space-y-4">
-            <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
+            <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
               What the platform offers
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Everything you need to make an informed decision.</h2>
@@ -203,10 +206,13 @@ export default function Home() {
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             {featureHighlights.map((feature) => (
-              <Card key={feature.title} className="bg-white/10 text-slate-100 shadow-lg">
+              <Card
+                key={feature.title}
+                className="border border-slate-200 bg-white text-slate-900 shadow-md transition duration-300 hover:border-emerald-200 hover:shadow-emerald-100"
+              >
                 <CardHeader>
-                  <CardTitle className="text-2xl text-white">{feature.title}</CardTitle>
-                  <CardDescription className="text-slate-200/90">
+                  <CardTitle className="text-2xl text-slate-900">{feature.title}</CardTitle>
+                  <CardDescription className="text-slate-600">
                     {feature.description}
                   </CardDescription>
                 </CardHeader>
@@ -217,7 +223,7 @@ export default function Home() {
 
         <section className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div className="space-y-6">
-            <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
+            <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
               Mission
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Empowering Canadians to give confidently.</h2>
@@ -237,10 +243,13 @@ export default function Home() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {pillars.map((pillar) => (
-              <Card key={pillar.title} className="bg-white/10 text-slate-100">
+              <Card
+                key={pillar.title}
+                className="border border-slate-200 bg-white text-slate-900 shadow-md transition duration-300 hover:border-emerald-200 hover:shadow-emerald-100"
+              >
                 <CardHeader>
-                  <CardTitle className="text-2xl text-white">{pillar.title}</CardTitle>
-                  <CardDescription className="text-slate-200/90">{pillar.copy}</CardDescription>
+                  <CardTitle className="text-2xl text-slate-900">{pillar.title}</CardTitle>
+                  <CardDescription className="text-slate-600">{pillar.copy}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
