@@ -253,15 +253,15 @@ export default function Home() {
                 </CardHeader>
               </Card>
             ))}
-            <Card className="bg-emerald-500 text-emerald-50">
+            <Card className="border border-slate-200 bg-white text-slate-900 shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-white">Status</CardTitle>
-                <CardDescription className="text-emerald-50/90">
+                <CardTitle className="text-2xl text-slate-900">Status</CardTitle>
+                <CardDescription className="text-slate-600">
                   HelpingCanada is growing with new categories, improved verification, and broader coverage on the roadmap. Your
                   feedback helps shape what comes next.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="text-emerald-50/90">
+              <CardContent className="text-slate-700">
                 <p>Share recommendations, community leads, or corrections via GitHub Issues to keep the platform accurate.</p>
               </CardContent>
             </Card>
