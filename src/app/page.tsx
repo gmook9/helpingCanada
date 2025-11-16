@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -40,11 +42,56 @@ const pillars = [
   },
 ];
 
+const vancouverScenes = [
+  {
+    title: "Stanley Park at dusk",
+    description: "Towering evergreens and seawall views remind us who benefits when generosity meets the land.",
+    src: "/images/stanley_park.jpg",
+    alt: "Stanley Park seawall at sunset",
+  },
+  {
+    title: "Granville Street in the rain",
+    description: "Downtown streets stay vibrant because neighbours continue to show up for one another.",
+    src: "/images/granville-street-rain.jpg",
+    alt: "Rain-soaked Granville Street in Vancouver",
+  },
+  {
+    title: "Vancouver from above",
+    description: "A wider skyline view keeps the mission focused on helping every community across the region.",
+    src: "/images/2023-Vancouver-Aerial-Skyline-Photography-Copyright-Photographer-Ian-Kobylanski-32.jpg",
+    alt: "Aerial view of Vancouver skyline",
+  },
+];
+
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.25),_transparent_60%)]" />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-32 pt-24 sm:px-10 lg:px-16">
+        <section className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-emerald-500/15">
+          <div className="relative h-[220px] overflow-hidden sm:h-[280px] lg:h-[320px]">
+            <Image
+              src="/images/canadian_flag.jpeg"
+              alt="Canadian flag waving in the wind"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent" />
+            <div className="relative z-10 flex h-full flex-col justify-between gap-4 p-6 sm:p-10">
+              <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Proudly Canadian</Badge>
+              <div className="space-y-2 text-white">
+                <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Giving starts at home</p>
+                <h2 className="text-3xl font-semibold sm:text-4xl">A flag for everyone we support.</h2>
+                <p className="max-w-2xl text-sm text-slate-100 sm:text-base">
+                  HelpingCanada lifts up causes from coast to coast, beginning with trusted organizations across Vancouver&apos;s communities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-10">
             <div className="flex flex-wrap items-center gap-3">
@@ -105,6 +152,38 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
+        </section>
+
+        <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
+          <div className="space-y-4 text-center sm:text-left">
+            <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-slate-200 ring-white/30 sm:mx-0">
+              Vancouver in focus
+            </Badge>
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Grounded in the places people care about.</h2>
+            <p className="text-lg text-slate-200">
+              Real neighbourhoods, real stories, and real needs — the imagery mirrors the communities that HelpingCanada connects donors
+              with every day.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {vancouverScenes.map((scene) => (
+              <Card key={scene.title} className="overflow-hidden border border-white/10 bg-white/10 text-slate-100">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={scene.src}
+                    alt={scene.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-500 hover:scale-105"
+                  />
+                </div>
+                <CardHeader className="space-y-2">
+                  <CardTitle className="text-2xl text-white">{scene.title}</CardTitle>
+                  <CardDescription className="text-slate-200/90">{scene.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
         </section>
 
         <section className="space-y-12">
