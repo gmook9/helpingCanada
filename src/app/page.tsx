@@ -62,15 +62,15 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-6 text-sm font-medium text-slate-300 sm:grid-cols-3">
               <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-              <p className="break-words hyphens-auto text-3xl font-semibold text-white sm:text-2xl">100% independent</p>
-              <p className="text-sm text-slate-200">No commissions, sponsorships, or referral payouts.</p>
+                <p className="text-3xl font-semibold text-white sm:text-4xl">100% independent</p>
+                <p className="text-sm text-slate-200">No commissions, sponsorships, or referral payouts.</p>
               </div>
               <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="break-words hyphens-auto text-3xl font-semibold text-white sm:text-2xl">Privacy first</p>
+                <p className="text-3xl font-semibold text-white sm:text-4xl">Privacy first</p>
                 <p className="text-sm text-slate-200">We never collect donor data or track browsing behaviour.</p>
               </div>
               <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="break-words hyphens-autotext-3xl font-semibold text-white sm:text-2xl">Built for impact</p>
+                <p className="text-3xl font-semibold text-white sm:text-4xl">Built for impact</p>
                 <p className="text-sm text-slate-200">Curated listings help your support reach people faster.</p>
               </div>
             </div>
