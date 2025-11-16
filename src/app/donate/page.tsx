@@ -13,7 +13,7 @@ const IconFrame = ({ children }: { children: ReactNode }) => (
     strokeWidth="1.8"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="h-6 w-6 text-emerald-100"
+    className="h-6 w-6 text-emerald-700"
     aria-hidden
   >
     {children}
@@ -243,7 +243,11 @@ export default function DonatePage() {
             >
               Return home
             </Link>
-            <Button variant="outline" size="lg" className="border-white/30 text-white">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+            >
               Start an impact plan
             </Button>
           </div>
@@ -256,8 +260,7 @@ export default function DonatePage() {
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Where your donation goes further.</h2>
             <p className="text-lg text-slate-200">
-              Hover or tap each card to learn how the organization shows up for Vancouver residents. When you are ready, select
-              &ldquo;Donate now&rdquo; to head directly to their secure giving page.
+              When you are ready, select &ldquo;Donate now&rdquo; to head directly to their secure giving page.
             </p>
           </div>
           <Card className="bg-white text-slate-900 shadow-2xl shadow-emerald-500/10">
@@ -290,7 +293,7 @@ export default function DonatePage() {
                 <CardHeader className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-600">
+                      <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
                         <Icon />
                       </div>
                       <div>
@@ -298,7 +301,9 @@ export default function DonatePage() {
                         <CardDescription className="text-slate-600">{organization.focus}</CardDescription>
                       </div>
                     </div>
-                    <Badge className="bg-emerald-50 text-emerald-700 ring-emerald-200">CRA Registered</Badge>
+                    <Badge className="flex-shrink-0 whitespace-nowrap bg-emerald-50 text-emerald-700 ring-emerald-200">
+                      CRA Registered
+                    </Badge>
                   </div>
                   <p className="text-base text-slate-700">{organization.description}</p>
                 </CardHeader>

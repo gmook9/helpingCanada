@@ -111,7 +111,11 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Button size="lg">Explore verified causes</Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+              >
                 Read the mission
               </Button>
             </div>
