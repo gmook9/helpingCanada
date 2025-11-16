@@ -162,17 +162,17 @@ export default function MissionPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {featureHighlights.map((feature, index) => (
               <Card
-                key={feature.title}
-                className="relative overflow-hidden border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/70 to-emerald-500/20 text-white shadow-lg shadow-emerald-500/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60"
+              key={feature.title}
+              className="relative overflow-hidden border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/70 to-emerald-500/20 text-white shadow-lg shadow-emerald-500/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60"
               >
-                <span className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-emerald-300/80 to-emerald-500/80" aria-hidden />
-                <CardHeader className="space-y-3">
-                  <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">
-                    <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs">0{index + 1}</span> Detail
-                  </div>
-                  <CardTitle className="text-2xl text-white">{feature.title}</CardTitle>
-                  <CardDescription className="text-slate-100/80">{feature.description}</CardDescription>
-                </CardHeader>
+              <span className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-emerald-300/80 to-emerald-500/80" aria-hidden />
+              <CardHeader className="space-y-3">
+                <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">
+                  <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs">0{index + 1}</span> Detail
+                </div>
+                <CardTitle className="text-2xl text-white">{feature.title}</CardTitle>
+                <CardDescription className="text-white">{feature.description}</CardDescription>
+              </CardHeader>
               </Card>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function MissionPage() {
                 </CardHeader>
               </Card>
             ))}
-            <Card className="overflow-hidden border border-white/10 bg-gradient-to-br from-emerald-500/25 via-slate-200/70 to-slate-950 text-white shadow-lg shadow-emerald-500/10">
+            <Card className="overflow-hidden border border-white/10 bg-gradient-to-br from-emerald-500/25 via-emerald-200/70 to-slate-350 text-white shadow-lg shadow-emerald-500/10">
               <CardHeader className="space-y-3">
                 <CardTitle className="text-2xl">Status</CardTitle>
                 <CardDescription className="text-slate-100/90">
