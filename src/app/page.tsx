@@ -1,55 +1,44 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
-const featureHighlights = [
-  {
-    title: "Verified Vancouver charities",
-    description:
-      "Every organization on the platform is vetted against public records, ensuring your support goes to legitimate community partners.",
-  },
-  {
-    title: "Zero referral incentives",
-    description:
-      "HelpingCanada never takes a cut, sells placements, or profits from your generosity — neutrality is a core principle.",
-  },
-  {
-    title: "Transparent information",
-    description:
-      "Get a clear snapshot of each nonprofit, including focus areas, community impact, and direct ways to give or get involved.",
-  },
-  {
-    title: "Built with privacy in mind",
-    description:
-      "No donor tracking, cookies, or intrusive analytics. You stay in control of your data and your decisions.",
-  },
-];
-
-const pillars = [
-  {
-    title: "Clarity",
-    copy: "Plain-language descriptions, trustworthy sources, and a distraction-free experience help donors choose with confidence.",
-  },
-  {
-    title: "Community",
-    copy: "HelpingCanada elevates grassroots initiatives, mutual-aid groups, and established charities working across Vancouver neighborhoods.",
-  },
-  {
-    title: "Care",
-    copy: "The platform is maintained by people who believe technology should reduce friction in doing good and amplify human connection.",
-  },
-];
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.25),_transparent_60%)]" />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-32 pt-24 sm:px-10 lg:px-16">
+        <section className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-emerald-500/15">
+          <div className="relative h-[220px] overflow-hidden sm:h-[280px] lg:h-[320px]">
+            <Image
+              src="/images/canadian_flag.jpeg"
+              alt="Canadian flag waving in the wind"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent" />
+            <div className="relative z-10 flex h-full flex-col justify-between gap-4 p-6 sm:p-10">
+              <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Proudly Canadian</Badge>
+              <div className="space-y-2 text-white">
+                <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Giving starts at home</p>
+                <h2 className="text-3xl font-semibold sm:text-4xl">A flag for everyone we support.</h2>
+                <p className="max-w-2xl text-sm text-slate-100 sm:text-base">
+                  HelpingCanada lifts up causes from coast to coast, beginning with trusted organizations across Vancouver&apos;s communities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-10">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="bg-white/10 text-emerald-200 ring-emerald-300/30">Community-Led Initiative</Badge>
-              <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
+              <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
                 Vancouver, British Columbia
               </Badge>
             </div>
@@ -64,22 +53,25 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Button size="lg">Explore verified causes</Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white">
+              <Link
+                href="/mission"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-lg font-semibold text-white transition hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+              >
                 Read the mission
-              </Button>
+              </Link>
             </div>
-            <div className="grid gap-6 text-sm font-medium text-slate-300 sm:grid-cols-3">
-              <div>
-                <p className="text-4xl font-semibold text-white">100% independent</p>
-                <p className="mt-2 text-sm text-slate-300">No commissions, sponsorships, or referral payouts.</p>
+            <div className="grid grid-cols-1 gap-6 text-sm font-medium text-slate-300 sm:grid-cols-3">
+              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-3xl font-semibold text-white sm:text-4xl">100% independent</p>
+                <p className="text-sm text-slate-200">No commissions, sponsorships, or referral payouts.</p>
               </div>
-              <div>
-                <p className="text-4xl font-semibold text-white">Privacy first</p>
-                <p className="mt-2 text-sm text-slate-300">We never collect donor data or track browsing behaviour.</p>
+              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-3xl font-semibold text-white sm:text-4xl">Privacy first</p>
+                <p className="text-sm text-slate-200">We never collect donor data or track browsing behaviour.</p>
               </div>
-              <div>
-                <p className="text-4xl font-semibold text-white">Built for impact</p>
-                <p className="mt-2 text-sm text-slate-300">Curated listings help your support reach people faster.</p>
+              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-3xl font-semibold text-white sm:text-4xl">Built for impact</p>
+                <p className="text-sm text-slate-200">Curated listings help your support reach people faster.</p>
               </div>
             </div>
           </div>
@@ -107,74 +99,6 @@ export default function Home() {
           </Card>
         </section>
 
-        <section className="space-y-12">
-          <div className="max-w-3xl space-y-4">
-            <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
-              What the platform offers
-            </Badge>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Everything you need to make an informed decision.</h2>
-            <p className="text-lg text-slate-200">
-              HelpingCanada curates information that matters — no marketing fluff, no referral schemes. Just a clear path to vetted
-              organizations and the people they support.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            {featureHighlights.map((feature) => (
-              <Card key={feature.title} className="bg-white/10 text-slate-100 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-white">{feature.title}</CardTitle>
-                  <CardDescription className="text-slate-200/90">
-                    {feature.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-          <div className="space-y-6">
-            <Badge variant="neutral" className="bg-white/5 text-slate-200 ring-white/20">
-              Mission
-            </Badge>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Empowering Canadians to give confidently.</h2>
-            <p className="text-lg leading-8 text-slate-200">
-              HelpingCanada is a public-good initiative built to strengthen communities. We amplify organizations doing vital work,
-              remove uncertainty for donors, and keep the focus on real impact across Vancouver and beyond.
-            </p>
-            <Card className="bg-white/90 text-slate-900">
-              <CardHeader>
-                <CardTitle className="text-2xl">Who built this</CardTitle>
-                <CardDescription>
-                  HelpingCanada is maintained by a software developer committed to technology that serves people, not platforms. The
-                  project is open-source (MIT) and always evolving with community input.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {pillars.map((pillar) => (
-              <Card key={pillar.title} className="bg-white/10 text-slate-100">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-white">{pillar.title}</CardTitle>
-                  <CardDescription className="text-slate-200/90">{pillar.copy}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-            <Card className="bg-emerald-500 text-emerald-50">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">Status</CardTitle>
-                <CardDescription className="text-emerald-50/90">
-                  HelpingCanada is growing with new categories, improved verification, and broader coverage on the roadmap. Your
-                  feedback helps shape what comes next.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-emerald-50/90">
-                <p>Share recommendations, community leads, or corrections via GitHub Issues to keep the platform accurate.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         <section className="rounded-3xl border border-white/10 bg-white/5 p-12 text-center shadow-2xl shadow-emerald-500/10">
           <div className="mx-auto flex max-w-3xl flex-col gap-6">
@@ -187,7 +111,11 @@ export default function Home() {
               GitHub so the community can discover and support them.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-200">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+              >
                 Submit via GitHub Issues
               </Button>
               <Button variant="ghost" size="lg" className="text-emerald-200">
