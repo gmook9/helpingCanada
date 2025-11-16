@@ -116,9 +116,9 @@ export default function MissionPage() {
           </div>
         </section>
 
-        <section className="grid gap-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
-            <Badge variant="neutral" className="w-fit bg-white/10 text-white ring-white/40">
+        <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
+          <div className="space-y-4 text-center sm:text-left">
+            <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-white ring-white/40 sm:mx-0">
               Grounded in the places people care about
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Real Vancouver stories shape every update.</h2>
@@ -126,30 +126,16 @@ export default function MissionPage() {
               We listen to neighbourhood organizers, outreach teams, and donors to learn what support actually looks like on the ground.
               The photography below is more than decoration — it&apos;s a reminder of who benefits from accurate information.
             </p>
-            <ul className="grid gap-3 text-left text-sm text-slate-200 sm:grid-cols-2">
-              <li className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                Weekly office hours surface community leads and corrections.
-              </li>
-              <li className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                Lived-experience advisors help explain context beyond headlines.
-              </li>
-              <li className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                Open GitHub roadmap invites contributions and scrutiny.
-              </li>
-              <li className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                Language is edited for clarity, accessibility, and respect.
-              </li>
-            </ul>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {vancouverScenes.map((scene, index) => (
-              <Card key={scene.title} className={`relative overflow-hidden border border-white/10 ${index === 0 ? "md:col-span-2" : ""}`}>
-                <div className={`relative w-full ${index === 0 ? "h-72" : "h-56"}`}>
+          <div className="grid gap-6 md:grid-cols-3">
+            {vancouverScenes.map((scene) => (
+              <Card key={scene.title} className="overflow-hidden border border-white/10">
+                <div className="relative h-64 w-full">
                   <Image
                     src={scene.src}
                     alt={scene.alt}
                     fill
-                    sizes={index === 0 ? "(max-width: 1024px) 100vw, 600px" : "(max-width: 768px) 100vw, 280px"}
+                    sizes="(max-width: 768px) 100vw, 300px"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/70 to-transparent" />
@@ -177,15 +163,15 @@ export default function MissionPage() {
             {featureHighlights.map((feature, index) => (
               <Card
                 key={feature.title}
-                className="relative overflow-hidden border border-white/10 bg-white/5 text-slate-100 transition duration-300 hover:border-emerald-300/50 hover:bg-white/10"
+                className="relative overflow-hidden border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/70 to-emerald-500/20 text-white shadow-lg shadow-emerald-500/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60"
               >
-                <span className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-emerald-300/60 to-emerald-500/60" aria-hidden />
+                <span className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-emerald-300/80 to-emerald-500/80" aria-hidden />
                 <CardHeader className="space-y-3">
                   <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">
                     <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs">0{index + 1}</span> Detail
                   </div>
                   <CardTitle className="text-2xl text-white">{feature.title}</CardTitle>
-                  <CardDescription className="text-slate-200/90">{feature.description}</CardDescription>
+                  <CardDescription className="text-slate-100/80">{feature.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -227,17 +213,15 @@ export default function MissionPage() {
                 </CardHeader>
               </Card>
             ))}
-            <Card className="border border-white/10 bg-white/5 text-slate-100">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">Status</CardTitle>
-                <CardDescription className="text-slate-200/80">
+            <Card className="overflow-hidden border border-white/10 bg-gradient-to-br from-emerald-500/25 via-slate-200/70 to-slate-950 text-white shadow-lg shadow-emerald-500/10">
+              <CardHeader className="space-y-3">
+                <CardTitle className="text-2xl">Status</CardTitle>
+                <CardDescription className="text-slate-100/90">
                   Upcoming releases include expanded coverage for the North Shore, improved API docs, and more transparent verification
                   tags.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="text-slate-200/90">
-                <p>Share recommendations, data sources, or corrections via GitHub Issues to keep listings current.</p>
-              </CardContent>
+              
             </Card>
           </div>
         </section>
