@@ -61,7 +61,7 @@ const vancouverScenes = [
   {
     title: "Vancouver from above",
     description: "An aerial skyline anchors our scope: every borough matters, not only the downtown core.",
-    src: "/images/2023-Vancouver-Aerial-Skyline-Photography-Copyright-Photographer-Ian-Kobylanski-32.jpg",
+    src: "/images/Vancouver-Skyline.jpg",
     alt: "Aerial view of Vancouver skyline",
   },
 ];
