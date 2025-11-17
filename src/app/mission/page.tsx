@@ -8,7 +8,7 @@ const featureHighlights = [
   {
     title: "Verified Vancouver charities",
     description:
-      "Every organization is vetted against public records and first-party confirmations so you know exactly who you are helping.",
+      "Every organization is vetted against public records.",
   },
   {
     title: "Zero referral incentives",
@@ -21,7 +21,7 @@ const featureHighlights = [
       "Each profile focuses on mission, impact, and ways to support — no dark patterns or marketing fluff to wade through.",
   },
   {
-    title: "Privacy-first infrastructure",
+    title: "Privacy-first design",
     description:
       "No tracking scripts, retargeting pixels, or ad networks. Decisions happen without compromising your data.",
   },
@@ -48,71 +48,135 @@ const pillars = [
 const vancouverScenes = [
   {
     title: "Stanley Park at dusk",
-    description: "Evergreen canopy, seawall, and ocean meet — a reminder that stewardship is both local and generational.",
+    description: "A peaceful spot where nature and city life blend, highlighting the importance of protecting local environments.",
     src: "/images/stanley_park.jpg",
     alt: "Stanley Park seawall at sunset",
   },
   {
     title: "Granville Street in the rain",
-    description: "Downtown corridors stay vibrant because neighbours continue to show up for each other.",
+    description: "Busy downtown streets that thrive thanks to community support and neighborly help.",
     src: "/images/granville-street-rain.jpg",
     alt: "Rain-soaked Granville Street in Vancouver",
   },
   {
     title: "Vancouver from above",
-    description: "An aerial skyline anchors our scope: every borough matters, not only the downtown core.",
+    description: "A view of the city skyline, reminding us that all areas of Vancouver are important, not just the center.",
     src: "/images/Vancouver-Skyline.jpg",
     alt: "Aerial view of Vancouver skyline",
   },
 ];
 
-const missionStats = [
-  { label: "Neighbourhoods highlighted", value: "30+" },
-  { label: "Causes under review", value: "120+" },
-  { label: "Community contributors", value: "80+" },
+const heroStats = [
+  {
+    value: "120+",
+    label: "Verified local orgs",
+  },
+  {
+    value: "45",
+    label: "Volunteer pathways",
+  },
+  {
+    value: "300+",
+    label: "Community stories",
+  },
 ];
+
+const trustLayers = [
+  {
+    title: "Glass-clarity briefs",
+    description:
+      "Every profile is rewritten in plain language with direct references, so donors see the work without jargon.",
+  },
+  {
+    title: "Signal-based vetting",
+    description:
+      "Financial health, governance, and neighbourhood impact are monitored weekly with manual and automated checks.",
+  },
+  {
+    title: "Community pulse",
+    description:
+      "Volunteers, service providers, and neighbours contribute updates that surface urgent needs sooner.",
+  },
+];
+
 
 export default function MissionPage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.35),_transparent_60%)]" />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-24 sm:px-10 lg:px-16">
-        <section className="space-y-10 text-center">
-          <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-white ring-white/40">
-            Our mission
-          </Badge>
-          <div className="space-y-6">
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Empowering Canadians to give confidently.
-            </h1>
-            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
-              We surface local knowledge, vet every listing, and keep the platform distraction-free so you can focus on helping people —
-              not navigating red tape.
-            </p>
-          </div>
-          <div className="grid gap-4 text-left sm:grid-cols-3">
-            {missionStats.map((stat) => (
-              <Card key={stat.label} className="bg-white/5 text-slate-100 shadow-lg shadow-emerald-500/10">
-                <CardHeader className="space-y-2">
-                  <CardTitle className="text-3xl font-semibold text-white">{stat.value}</CardTitle>
-                  <CardDescription className="text-slate-200/80">{stat.label}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-            >
-              Back to home
-            </Link>
-            <Link
-              href="/donate"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-lg font-semibold text-white transition hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
-            >
-              Explore donations
-            </Link>
+        <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.04] px-8 py-16 shadow-[0_20px_60px_rgba(15,23,42,0.45)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_55%)]" />
+          <div className="pointer-events-none absolute -top-12 right-12 h-32 w-32 rounded-full bg-emerald-400/40 blur-[120px]" />
+          <div className="pointer-events-none absolute bottom-0 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[140px]" />
+          <div className="relative grid gap-16 lg:grid-cols-[1.05fr,0.95fr]">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-slate-950/50 px-5 py-2 text-xs font-semibold uppercase tracking-[0.45em] text-emerald-200/90">
+                <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(16,185,129,0.9)]" />
+                Mission
+              </div>
+              <div className="space-y-4">
+                <h1 className="text-left text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Empowering Canadians to give confidently.
+                </h1>
+                <p className="text-lg leading-8 text-slate-200/90 sm:text-xl">
+                  We combine local expertise, transparent reporting, and privacy-first design so you can direct generosity where it matters most without friction.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/"
+                  className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 px-8 py-4 text-lg font-semibold text-white shadow-[0_15px_35px_rgba(6,95,70,0.35)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+                >
+                  Back to home
+                </Link>
+                <Link
+                  href="/donate"
+                  className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full border border-white/30 bg-white/5 px-8 py-4 text-lg font-semibold text-white backdrop-blur transition hover:border-emerald-200 hover:text-emerald-100"
+                >
+                  Explore donations
+                </Link>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {heroStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-white/10 bg-slate-950/50 px-5 py-6 text-left backdrop-blur-xl"
+                  >
+                    <p className="text-3xl font-semibold text-white">{stat.value}</p>
+                    <p className="text-xs uppercase tracking-[0.25em] text-slate-300">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative rounded-[28px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 text-left backdrop-blur-2xl">
+              <div className="pointer-events-none absolute -top-10 right-8 h-16 w-16 rounded-full bg-sky-400/30 blur-[80px]" />
+              <div className="pointer-events-none absolute bottom-6 left-6 h-24 w-24 rounded-full bg-emerald-400/20 blur-[90px]" />
+              <div className="relative space-y-6">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200/80">
+                  <span className="h-1.5 w-6 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400" />
+                  Trust Architecture
+                </div>
+                <p className="text-2xl font-semibold text-white">
+                  Futuristic transparency built for modern philanthropy.
+                </p>
+                <div className="space-y-4">
+                  {trustLayers.map((layer) => (
+                    <div
+                      key={layer.title}
+                      className="rounded-2xl border border-white/10 bg-slate-950/50 p-5 backdrop-blur-xl transition hover:border-emerald-200/60"
+                    >
+                      <p className="text-lg font-semibold text-white">{layer.title}</p>
+                      <p className="text-sm text-slate-300">{layer.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-2xl border border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-6 text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)]">
+                  No advertising, no pay-to-play, and no surprise data collection—just glassy clarity for every Canadian donor.
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -123,8 +187,7 @@ export default function MissionPage() {
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Real Vancouver stories shape every update.</h2>
             <p className="text-lg text-slate-200">
-              We listen to neighbourhood organizers, outreach teams, and donors to learn what support actually looks like on the ground.
-              The photography below is more than decoration — it&apos;s a reminder of who benefits from accurate information.
+              This is our way of giving back to the beautiful city of Vancouver, celebrating its communities and supporting those who make it thrive.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -156,7 +219,7 @@ export default function MissionPage() {
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">A giving guide that feels modern and calm.</h2>
             <p className="text-lg text-slate-200">
-              Whether you&apos;re searching on mobile or a desktop, every card prioritizes what matters: mission, impact, and how to help.
+              We do the research so you don't have to
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
