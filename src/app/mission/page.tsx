@@ -8,7 +8,7 @@ const featureHighlights = [
   {
     title: "Verified Vancouver charities",
     description:
-      "Every organization is vetted against public records and first-party confirmations so you know exactly who you are helping.",
+      "Every organization is vetted against public records.",
   },
   {
     title: "Zero referral incentives",
@@ -21,7 +21,7 @@ const featureHighlights = [
       "Each profile focuses on mission, impact, and ways to support — no dark patterns or marketing fluff to wade through.",
   },
   {
-    title: "Privacy-first infrastructure",
+    title: "Privacy-first design",
     description:
       "No tracking scripts, retargeting pixels, or ad networks. Decisions happen without compromising your data.",
   },
@@ -48,29 +48,24 @@ const pillars = [
 const vancouverScenes = [
   {
     title: "Stanley Park at dusk",
-    description: "Evergreen canopy, seawall, and ocean meet — a reminder that stewardship is both local and generational.",
+    description: "A peaceful spot where nature and city life blend, highlighting the importance of protecting local environments.",
     src: "/images/stanley_park.jpg",
     alt: "Stanley Park seawall at sunset",
   },
   {
     title: "Granville Street in the rain",
-    description: "Downtown corridors stay vibrant because neighbours continue to show up for each other.",
+    description: "Busy downtown streets that thrive thanks to community support and neighborly help.",
     src: "/images/granville-street-rain.jpg",
     alt: "Rain-soaked Granville Street in Vancouver",
   },
   {
     title: "Vancouver from above",
-    description: "An aerial skyline anchors our scope: every borough matters, not only the downtown core.",
+    description: "A view of the city skyline, reminding us that all areas of Vancouver are important, not just the center.",
     src: "/images/Vancouver-Skyline.jpg",
     alt: "Aerial view of Vancouver skyline",
   },
 ];
 
-const missionStats = [
-  { label: "Neighbourhoods highlighted", value: "30+" },
-  { label: "Causes under review", value: "120+" },
-  { label: "Community contributors", value: "80+" },
-];
 
 export default function MissionPage() {
   return (
@@ -89,16 +84,6 @@ export default function MissionPage() {
               We surface local knowledge, vet every listing, and keep the platform distraction-free so you can focus on helping people —
               not navigating red tape.
             </p>
-          </div>
-          <div className="grid gap-4 text-left sm:grid-cols-3">
-            {missionStats.map((stat) => (
-              <Card key={stat.label} className="bg-white/5 text-slate-100 shadow-lg shadow-emerald-500/10">
-                <CardHeader className="space-y-2">
-                  <CardTitle className="text-3xl font-semibold text-white">{stat.value}</CardTitle>
-                  <CardDescription className="text-slate-200/80">{stat.label}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
@@ -123,8 +108,7 @@ export default function MissionPage() {
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Real Vancouver stories shape every update.</h2>
             <p className="text-lg text-slate-200">
-              We listen to neighbourhood organizers, outreach teams, and donors to learn what support actually looks like on the ground.
-              The photography below is more than decoration — it&apos;s a reminder of who benefits from accurate information.
+              This is our way of giving back to the beautiful city of Vancouver, celebrating its communities and supporting those who make it thrive.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -156,7 +140,7 @@ export default function MissionPage() {
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">A giving guide that feels modern and calm.</h2>
             <p className="text-lg text-slate-200">
-              Whether you&apos;re searching on mobile or a desktop, every card prioritizes what matters: mission, impact, and how to help.
+              We do the research so you don't have to
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
