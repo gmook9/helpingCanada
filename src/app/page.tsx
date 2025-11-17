@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-6 text-sm font-medium text-slate-300 sm:grid-cols-3">
               <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold text-white sm:text-4xl">100% independent</p>
+                <p className="text-3xl break-auto hyphens-auto font-semibold text-white sm:text-4xl">100% independent</p>
                 <p className="text-sm text-slate-200">No commissions, sponsorships, or referral payouts.</p>
               </div>
               <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
@@ -111,16 +111,18 @@ export default function Home() {
               GitHub so the community can discover and support them.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
-              >
-                Submit via GitHub Issues
-              </Button>
-              <Button variant="ghost" size="lg" className="text-emerald-200">
+              <Link href="https://github.com/gmook9/helpingCanada/issues">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+                >
+                  Submit via GitHub Issues
+                </Button>
+              </Link>
+              {/* <Button variant="ghost" size="lg" className="text-emerald-200">
                 View project license
-              </Button>
+              </Button> */}
             </div>
           </div>
         </section>
