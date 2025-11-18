@@ -30,18 +30,52 @@ const featureHighlights = [
 const pillars = [
   {
     title: "Clarity",
-    copy: "Plain-language write-ups and accessible data sources mean anyone can evaluate an organization in minutes.",
+    copy: "Plain-language snapshots plus cited sources keep decisions quick.",
     gradient: "from-emerald-500/30 via-emerald-400/20 to-slate-900/80",
   },
   {
     title: "Community",
-    copy: "Grassroots initiatives, mutual aid groups, and established charities share the same stage.",
+    copy: "Grassroots groups and established charities share the exact same spotlight.",
     gradient: "from-emerald-400/30 via-sky-400/20 to-slate-900/80",
   },
   {
     title: "Care",
-    copy: "We build software with the people most affected — service providers, volunteers, and neighbours in need.",
+    copy: "The product is shaped with service providers, volunteers, and neighbours who rely on it.",
     gradient: "from-teal-400/30 via-emerald-400/20 to-slate-900/80",
+  },
+];
+
+const builderHighlights = [
+  {
+    title: "Public repo",
+    detail: "Source code, copy, and issues live on GitHub for anyone to fork.",
+  },
+  {
+    title: "Community QA",
+    detail: "Issues and pull requests from volunteers keep listings accurate.",
+  },
+  {
+    title: "No sponsors",
+    detail: "Listings cannot be bought or boosted—neutrality stays by default.",
+  },
+  {
+    title: "Local feedback",
+    detail: "Updates prioritize requests from people working on the ground.",
+  },
+];
+
+const roadmapSteps = [
+  {
+    label: "Now",
+    detail: "Expand coverage across Metro Vancouver and tighten profile data.",
+  },
+  {
+    label: "Next",
+    detail: "Ship fast search, saved filters, and an easy request form.",
+  },
+  {
+    label: "Later",
+    detail: "Open a lightweight API so other civic projects can reuse the data.",
   },
 ];
 
@@ -68,16 +102,16 @@ const vancouverScenes = [
 
 const heroStats = [
   {
-    value: "120+",
+    value: "10",
     label: "Verified local orgs",
   },
   {
-    value: "45",
-    label: "Volunteer pathways",
+    value: "$0",
+    label: "No referral payments",
   },
   {
-    value: "300+",
-    label: "Community stories",
+    value: "0%",
+    label: "No additional fees",
   },
 ];
 
@@ -212,82 +246,64 @@ export default function MissionPage() {
           </div>
         </section>
 
-        <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
-          <div className="space-y-4 text-center sm:text-left">
-            <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-white ring-white/40 sm:mx-0">
-              Everything you need to make an informed decision
-            </Badge>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">A giving guide that feels modern and calm.</h2>
-            <p className="text-lg text-slate-200">
-              We do the research so you don't have to
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {featureHighlights.map((feature, index) => (
-              <Card
-              key={feature.title}
-              className="relative overflow-hidden border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/70 to-emerald-500/20 text-white shadow-lg shadow-emerald-500/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60"
-              >
-              <span className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-emerald-300/80 to-emerald-500/80" aria-hidden />
-              <CardHeader className="space-y-3">
-                <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">
-                  <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs">0{index + 1}</span> Detail
-                </div>
-                <CardTitle className="text-2xl text-white">{feature.title}</CardTitle>
-                <CardDescription className="text-white">{feature.description}</CardDescription>
-              </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </section>
+        <section className="rounded-[32px] border border-white/15 bg-gradient-to-br from-slate-950/70 via-slate-900/70 to-slate-950/40 p-8 shadow-[0_25px_60px_rgba(15,23,42,0.65)] sm:p-10">
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="space-y-6">
+              <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-slate-950/70 p-6 text-center shadow-[0_20px_45px_rgba(15,23,42,0.45)] backdrop-blur-2xl">
+              <div className="pointer-events-none absolute -top-10 right-6 h-24 w-24 rounded-full bg-emerald-400/30 blur-[100px]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full bg-gradient-to-t from-emerald-500/10 to-transparent" />
 
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
-            <Badge variant="neutral" className="w-fit bg-white/10 text-white ring-white/40">
-              Empowering Canadians to give confidently
-            </Badge>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Mission, process, and accountability.</h2>
-            <p className="text-lg text-slate-200">
-              HelpingCanada is an open-source public-good initiative. Every line of code and every copy update runs through the same
-              lens: Does this make it easier to trust Vancouver charities?
-            </p>
-            <Card className="bg-white/90 text-slate-900">
-              <CardHeader>
-                <CardTitle className="text-2xl">Who builds this</CardTitle>
-                <CardDescription className="text-slate-600">
-                  A software developer and a rotating bench of volunteers maintain the platform. Contributors share research, design, and
-                  code improvements via GitHub, ensuring nothing happens behind closed doors.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">
-                <p>Roadmaps, issues, and discussions stay public so anyone can suggest fixes or highlight new organizations.</p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {pillars.map((pillar) => (
-              <Card
-                key={pillar.title}
-                className={`overflow-hidden border border-white/10 bg-gradient-to-br ${pillar.gradient} text-white shadow-lg shadow-emerald-500/10`}
-              >
-                <CardHeader className="space-y-3">
-                  <CardTitle className="text-2xl">{pillar.title}</CardTitle>
-                  <CardDescription className="text-slate-100/90">{pillar.copy}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-            <Card className="overflow-hidden border border-white/10 bg-gradient-to-br from-emerald-500/25 via-emerald-200/70 to-slate-350 text-white shadow-lg shadow-emerald-500/10">
-              <CardHeader className="space-y-3">
-                <CardTitle className="text-2xl">Status</CardTitle>
-                <CardDescription className="text-slate-100/90">
-                  Upcoming releases include expanded coverage for the North Shore, improved API docs, and more transparent verification
-                  tags.
-                </CardDescription>
-              </CardHeader>
-              
-            </Card>
-          </div>
-        </section>
+              <div className="relative flex items-center justify-between text-xs font-semibold uppercase tracking-[0.35em] text-emerald-100">
+              <span>Status</span>
+              <span>Live roadmap</span>
+              </div>
+
+              <div className="relative mt-6 space-y-5">
+              {[
+              {
+                label: "Now",
+                detail: "Expanding the available donation list.",
+              },
+              {
+                label: "Next",
+                detail: "Expanding coverage to more areas.",
+              },
+              {
+                label: "Later",
+                detail: "Implementing expanded verification techniques.",
+              },
+              ].map((step, index) => (
+              <div key={step.label} className="relative pl-8 text-left">
+                <span
+                aria-hidden="true"
+                className="absolute left-0 top-2 h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.85)]"
+                />
+                {index < [
+                {
+                label: "Now",
+                detail: "Expanding the available donation list.",
+                },
+                {
+                label: "Next",
+                detail: "Expanding coverage to more areas.",
+                },
+                {
+                label: "Later",
+                detail: "Implementing expanded verification techniques.",
+                },
+                ].length - 1 && (
+                <span aria-hidden="true" className="absolute left-0 top-5 h-9 w-px bg-white/10" />
+                )}
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-200">{step.label}</p>
+                <p className="text-base text-slate-100">{step.detail}</p>
+              </div>
+              ))}
+              </div>
+              </div>
+            </div>
+            </div>
+            </section>
+
       </main>
     </div>
   );
