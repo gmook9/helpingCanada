@@ -301,7 +301,7 @@ export default function MissionPage() {
               </div>
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center space-y-4">
               <Link
           href="https://github.com/gmook9/helpingCanada"
           target="_blank"
@@ -322,6 +322,9 @@ export default function MissionPage() {
             />
           </svg>
               </Link>
+                <div className="rounded-2xl border border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-2 text-center text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)] transition">
+                Open source
+                </div>
             </div>
             </div>
             </section>
