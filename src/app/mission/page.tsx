@@ -83,19 +83,19 @@ const heroStats = [
 
 const trustLayers = [
   {
-    title: "Glass-clarity briefs",
+    title: "Clear summaries",
     description:
-      "Every profile is rewritten in plain language with direct references, so donors see the work without jargon.",
+      "Each listing includes a simple, plain-language overview created from reputable public info.",
   },
   {
-    title: "Signal-based vetting",
+    title: "Reliable sources",
     description:
-      "Financial health, governance, and neighbourhood impact are monitored weekly with manual and automated checks.",
+      "All recommendations come from verified organizations and publicly available data.",
   },
   {
-    title: "Community pulse",
+    title: "Community-focused",
     description:
-      "Volunteers, service providers, and neighbours contribute updates that surface urgent needs sooner.",
+      "The goal is to highlight groups doing real work in their local areas—nothing sponsored, nothing paid.",
   },
 ];
 
