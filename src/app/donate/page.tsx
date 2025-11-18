@@ -243,44 +243,18 @@ export default function DonatePage() {
             >
               Return home
             </Link>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
-            >
-              Start an impact plan
-            </Button>
+            <Link href="/mission">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+              >
+                Mission
+              </Button>
+            </Link>
           </div>
         </section>
 
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
-            <Badge variant="neutral" className="bg-white/10 text-white ring-white/40">
-              10 reputable nonprofits
-            </Badge>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Where your donation goes further.</h2>
-            <p className="text-lg text-slate-200">
-              When you are ready, select &ldquo;Donate now&rdquo; to head directly to their secure giving page.
-            </p>
-          </div>
-          <Card className="bg-white text-slate-900 shadow-2xl shadow-emerald-500/10">
-            <CardHeader className="space-y-4">
-              <CardTitle className="text-2xl">How we vet organizations</CardTitle>
-              <CardDescription className="text-slate-600">
-                Every listing is sourced from public CRA filings, community recommendations, and the organization&apos;s own transparency
-                reports. We prioritize groups with clear missions, measurable outcomes, and active governance boards.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-3 text-sm text-slate-600">
-              {givingPrinciples.map((principle) => (
-                <div key={principle.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-base font-semibold text-slate-900">{principle.title}</p>
-                  <p className="text-slate-600">{principle.copy}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </section>
 
         <section className="grid gap-6 md:grid-cols-2">
           {organizations.map((organization) => {
