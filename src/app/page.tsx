@@ -52,7 +52,9 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg">Explore verified causes</Button>
+              <Link href="/donate">
+                <Button size="lg">Explore verified causes</Button>
+              </Link>
               <Link
                 href="/mission"
                 className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-lg font-semibold text-white transition hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
