@@ -13,7 +13,7 @@ export default function Home() {
         <section className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-emerald-500/15">
           <div className="relative h-[220px] overflow-hidden sm:h-[280px] lg:h-[320px]">
             <Image
-              src="/images/canadian_flag.jpeg"
+              src="/images/downtown-Vancouver-skyline.jpg"
               alt="Canadian flag waving in the wind"
               fill
               priority
@@ -21,14 +21,14 @@ export default function Home() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent" />
-            <div className="relative z-10 flex h-full flex-col justify-between gap-4 p-6 sm:p-10">
-              <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Proudly Canadian</Badge>
+            <div className="relative z-10 flex h-full flex-col justify-between gap-2 p-4 sm:gap-4 sm:p-6 lg:p-10">
+              <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Helping Canada</Badge>
               <div className="space-y-2 text-white">
-                <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Giving starts at home</p>
-                <h2 className="text-3xl font-semibold sm:text-4xl">A flag for everyone we support.</h2>
-                <p className="max-w-2xl text-sm text-slate-100 sm:text-base">
-                  HelpingCanada lifts up causes from coast to coast, beginning with trusted organizations across Vancouver&apos;s communities.
-                </p>
+              <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Verified charities. Clear impact. Simple giving.</p>
+              <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">Supporting trusted Canadian charities, starting with Vancouver.</h2>
+              <p className="max-w-2xl text-xs text-slate-100 sm:text-sm lg:text-base">
+                HelpingCanada connects people around the world to verified, mission-driven organizations making real impact in the Vancouver communities.
+              </p>
               </div>
             </div>
           </div>
@@ -52,7 +52,9 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg">Explore verified causes</Button>
+              <Link href="/donate">
+                <Button size="lg">Explore verified causes</Button>
+              </Link>
               <Link
                 href="/mission"
                 className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-lg font-semibold text-white transition hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
@@ -75,28 +77,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Card className="bg-white/95 text-slate-900 shadow-2xl">
+            <Card className="bg-white/5 border border-white/10 text-white shadow-2xl">
             <CardHeader>
-              <Badge variant="neutral" className="w-fit bg-emerald-50 text-emerald-700">
-                Why this exists
+              <Badge className="w-fit bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">
+              Why this exists
               </Badge>
               <CardTitle className="text-3xl">Giving should feel clear and trustworthy</CardTitle>
-              <CardDescription>
-                Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
-                simplifies the journey, highlighting verified, transparent causes with no distractions.
+              <CardDescription className="text-slate-200">
+              Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
+              simplifies the journey, highlighting verified, transparent causes with no distractions.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4 text-base text-slate-600">
-              <p>
-                The platform guides you to reputable charities and mutual-aid groups so you can give confidently. Each profile is
-                sourced from public records, community insight, and direct collaboration with organizations doing the work.
-              </p>
-              <p>
-                Whether you are a long-time donor or someone who wants to start giving, HelpingCanada helps you act quickly, safely,
-                and meaningfully.
-              </p>
-            </CardContent>
-          </Card>
+            </Card>
         </section>
 
 
@@ -127,6 +119,12 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <footer className="mx-auto w-full max-w-6xl px-6 pb-12 text-xs leading-6 text-slate-400 sm:px-10 lg:px-16">
+        <p className="border-t border-white/10 pt-6">
+          HelpingCanada.org is an independent project and not affiliated with the Government of Canada. We link directly to verified
+          charities and do not collect donations.
+        </p>
+      </footer>
     </div>
   );
 }

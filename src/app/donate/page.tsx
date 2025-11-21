@@ -295,6 +295,20 @@ export default function DonatePage() {
           })}
         </section>
       </main>
+      <footer className="mx-auto w-full max-w-6xl px-6 pb-12 text-xs leading-6 text-slate-400 sm:px-10 lg:px-16">
+        <p className="border-t border-white/10 pt-6">
+          <span className="font-semibold text-slate-300">*CRA-registered charity*</span> means an organization officially
+          recognized by the Canadian government that can issue tax-deductible donation receipts and must meet strict
+          operational and reporting rules.{" "}
+          <a
+            href="https://www.canada.ca/en/revenue-agency/services/charities-giving/about-registered-charities/what-difference-between-a-registered-charity-a-non-profit-organization.html"
+            className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
+          >
+            More on CRA-registered organizations
+          </a>
+          .
+        </p>
+      </footer>
     </div>
   );
 }
