@@ -22,7 +22,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent" />
             <div className="relative z-10 flex h-full flex-col justify-between gap-4 p-6 sm:p-10">
-              <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Proudly Canadian</Badge>
+              <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Helping Canada</Badge>
               <div className="space-y-2 text-white">
                 <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Giving starts at home</p>
                 <h2 className="text-3xl font-semibold sm:text-4xl">A flag for everyone we support.</h2>
@@ -75,28 +75,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Card className="bg-white/95 text-slate-900 shadow-2xl">
+            <Card className="bg-white/5 border border-white/10 text-white shadow-2xl">
             <CardHeader>
-              <Badge variant="neutral" className="w-fit bg-emerald-50 text-emerald-700">
-                Why this exists
+              <Badge className="w-fit bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">
+              Why this exists
               </Badge>
               <CardTitle className="text-3xl">Giving should feel clear and trustworthy</CardTitle>
-              <CardDescription>
-                Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
-                simplifies the journey, highlighting verified, transparent causes with no distractions.
+              <CardDescription className="text-slate-200">
+              Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
+              simplifies the journey, highlighting verified, transparent causes with no distractions.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4 text-base text-slate-600">
-              <p>
-                The platform guides you to reputable charities and mutual-aid groups so you can give confidently. Each profile is
-                sourced from public records, community insight, and direct collaboration with organizations doing the work.
-              </p>
-              <p>
-                Whether you are a long-time donor or someone who wants to start giving, HelpingCanada helps you act quickly, safely,
-                and meaningfully.
-              </p>
-            </CardContent>
-          </Card>
+            </Card>
         </section>
 
 
