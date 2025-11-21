@@ -13,7 +13,7 @@ export default function Home() {
         <section className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-emerald-500/15">
           <div className="relative h-[220px] overflow-hidden sm:h-[280px] lg:h-[320px]">
             <Image
-              src="/images/canadian_flag.jpeg"
+              src="/images/downtown-Vancouver-skyline.jpg"
               alt="Canadian flag waving in the wind"
               fill
               priority
@@ -21,14 +21,14 @@ export default function Home() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/70 to-transparent" />
-            <div className="relative z-10 flex h-full flex-col justify-between gap-4 p-6 sm:p-10">
+            <div className="relative z-10 flex h-full flex-col justify-between gap-2 p-4 sm:gap-4 sm:p-6 lg:p-10">
               <Badge className="bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">Helping Canada</Badge>
               <div className="space-y-2 text-white">
-                <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Giving starts at home</p>
-                <h2 className="text-3xl font-semibold sm:text-4xl">A flag for everyone we support.</h2>
-                <p className="max-w-2xl text-sm text-slate-100 sm:text-base">
-                  HelpingCanada lifts up causes from coast to coast, beginning with trusted organizations across Vancouver&apos;s communities.
-                </p>
+              <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Verified charities. Clear impact. Simple giving.</p>
+              <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">Supporting trusted Canadian charities, starting with Vancouver.</h2>
+              <p className="max-w-2xl text-xs text-slate-100 sm:text-sm lg:text-base">
+                HelpingCanada connects people around the world to verified, mission-driven organizations making real impact in the Vancouver communities.
+              </p>
               </div>
             </div>
           </div>
@@ -119,6 +119,12 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <footer className="mx-auto w-full max-w-6xl px-6 pb-12 text-xs leading-6 text-slate-400 sm:px-10 lg:px-16">
+        <p className="border-t border-white/10 pt-6">
+          HelpingCanada.org is an independent project and not affiliated with the Government of Canada. We link directly to verified
+          charities and do not collect donations.
+        </p>
+      </footer>
     </div>
   );
 }
