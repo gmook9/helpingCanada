@@ -256,13 +256,13 @@ export default function DonatePage() {
         </section>
 
 
-        <section className="grid gap-6 md:grid-cols-2">
+        <section className="grid justify-items-center gap-6 md:grid-cols-2 md:justify-items-stretch">
           {organizations.map((organization) => {
             const Icon = iconComponents[organization.icon];
             return (
               <Card
                 key={organization.name}
-                className="group flex flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40"
+                className="group flex w-full max-w-xl flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40 md:max-w-none"
               >
                 <CardHeader className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
