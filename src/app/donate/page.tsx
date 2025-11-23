@@ -217,9 +217,9 @@ const givingPrinciples = [
 
 export default function DonatePage() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.3),_transparent_60%)]" />
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 pb-24 pt-24 sm:px-10 lg:px-16">
+        <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 pb-24 pt-24 sm:px-10 lg:px-16">
         <section className="space-y-8">
           <div className="flex flex-wrap items-center gap-3">
             <Badge className="bg-white/10 text-emerald-200 ring-emerald-300/30">Trusted Vancouver Causes</Badge>
@@ -255,14 +255,13 @@ export default function DonatePage() {
           </div>
         </section>
 
-
-        <section className="grid gap-6 md:grid-cols-2">
+        <section className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
           {organizations.map((organization) => {
             const Icon = iconComponents[organization.icon];
             return (
               <Card
                 key={organization.name}
-                className="group flex flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40"
+                className="group flex w-full max-w-xl flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40 md:max-w-none"
               >
                 <CardHeader className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
