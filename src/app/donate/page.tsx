@@ -235,6 +235,17 @@ export default function DonatePage() {
               Each nonprofit below is based in Metro Vancouver, registered, and known for transparent governance. Combine a few to
               balance urgent relief with long-term systems change.
             </p>
+            <p className="text-sm text-slate-300">
+              <a
+              href="https://www.canada.ca/en/revenue-agency/services/charities-giving/list-charities/list-charities-other-qualified-donees.html"
+              target="_blank"
+              rel="noreferrer"
+              className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
+              >
+              Check out info about tax credits for donations
+              </a>
+              .
+            </p>
           </div>
           <div className="flex flex-wrap gap-4">
             <Link
