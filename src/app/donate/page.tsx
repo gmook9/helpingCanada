@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client"
+
+import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
@@ -93,6 +95,22 @@ const CheckIcon = () => (
   <IconFrame>
     <path d="m5.5 12.5 3.5 3.5 9-9" />
   </IconFrame>
+);
+
+const SearchIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-5 w-5 text-emerald-200"
+    aria-hidden
+  >
+    <circle cx="11" cy="11" r="7" />
+    <path d="m16.5 16.5 4 4" />
+  </svg>
 );
 
 const iconComponents = {
@@ -216,6 +234,14 @@ const givingPrinciples = [
 ];
 
 export default function DonatePage() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredOrganizations = useMemo(() => {
+    const term = searchQuery.trim().toLowerCase();
+    if (!term) return organizations;
+    return organizations.filter((organization) => organization.name.toLowerCase().includes(term));
+  }, [searchQuery]);
+
   return (
      <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.3),_transparent_60%)]" />
@@ -235,28 +261,62 @@ export default function DonatePage() {
               Each nonprofit below is based in Metro Vancouver, registered, and known for transparent governance. Combine a few to
               balance urgent relief with long-term systems change.
             </p>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-colors hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-            >
-              Return home
-            </Link>
-            <Link href="/mission">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+            <p className="text-sm text-slate-300">
+              <a
+              href="https://www.canada.ca/en/revenue-agency/services/charities-giving/list-charities/list-charities-other-qualified-donees.html"
+              target="_blank"
+              rel="noreferrer"
+              className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
               >
-                Mission
-              </Button>
-            </Link>
+              Check out info about tax credits for donations
+              </a>
+              .
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-colors hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              >
+                Return home
+              </Link>
+              <Link href="/mission">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
+                >
+                  Mission
+                </Button>
+              </Link>
+            </div>
+            <div className="relative w-full max-w-md overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-[0_10px_50px_rgba(0,0,0,0.35)] backdrop-blur">
+              <label className="sr-only" htmlFor="organization-search">
+                Search organizations
+              </label>
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2">
+                <SearchIcon />
+              </span>
+              <input
+                id="organization-search"
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder="Search organizations"
+                className="w-full bg-transparent px-12 py-3 text-sm text-white placeholder:text-slate-300/70 focus:outline-none focus:ring-2 focus:ring-emerald-300/50"
+              />
+            </div>
           </div>
         </section>
 
         <section className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-          {organizations.map((organization) => {
+          {filteredOrganizations.length === 0 && (
+            <div className="col-span-full rounded-2xl border border-white/10 bg-white/5 p-8 text-center text-sm text-slate-200 shadow-inner">
+              No organizations match your search. Try a different name.
+            </div>
+          )}
+          {filteredOrganizations.map((organization) => {
             const Icon = iconComponents[organization.icon];
             return (
               <Card
