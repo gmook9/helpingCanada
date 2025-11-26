@@ -99,8 +99,7 @@ export default function Home() {
             </Badge>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">Have a charity to recommend?</h2>
             <p className="text-lg text-slate-200">
-              HelpingCanada thrives on local insight. If you&apos;re part of a nonprofit or know a group making a difference, share it on
-              GitHub so the community can discover and support them.
+              HelpingCanada thrives on local insight. If you&apos;re part of a nonprofit or know a group making a difference, share it with us so the community can discover and support them. We will verify submissions before adding it to the site.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="https://forms.gle/qCfAvZczv1zfRCRAA">
