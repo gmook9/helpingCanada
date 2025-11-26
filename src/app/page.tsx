@@ -103,13 +103,22 @@ export default function Home() {
               GitHub so the community can discover and support them.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="https://github.com/gmook9/helpingCanada/issues">
+              <Link href="https://forms.gle/qCfAvZczv1zfRCRAA">
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
                 >
-                  Submit via GitHub Issues
+                  Recommend a Charity
+                </Button>
+                </Link>
+                <Link href="https://github.com/gmook9/helpingCanada/issues">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="text-emerald-200"
+                >
+                  Report an Issue
                 </Button>
               </Link>
               {/* <Button variant="ghost" size="lg" className="text-emerald-200">
