@@ -123,9 +123,6 @@ export default function Home() {
                   Report an Issue
                 </Button>
               </Link>
-              {/* <Button variant="ghost" size="lg" className="text-emerald-200">
-                View project license
-              </Button> */}
             </div>
           </div>
         </section>
