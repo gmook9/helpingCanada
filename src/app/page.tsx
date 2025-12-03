@@ -99,18 +99,28 @@ export default function Home() {
               ))}
             </div>
           </div>
-            <Card className="bg-white/5 border border-white/10 text-white shadow-2xl">
-            <CardHeader>
-              <Badge className="w-fit bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">
-              Why this exists
-              </Badge>
-              <CardTitle className="text-3xl">Giving should feel clear and trustworthy</CardTitle>
-              <CardDescription className="text-slate-200">
-              Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
-              simplifies the journey, highlighting verified, transparent causes with no distractions.
+            <Card className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/[0.03] to-white/0 text-white shadow-lg shadow-emerald-500/40 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60 hover:shadow-emerald-400/20">
+            <Image
+              src="/images/canadian_flag.jpeg"
+              alt="Canadian flag"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(52,211,153,0.14),transparent_32%)] opacity-80 transition duration-500 group-hover:opacity-100" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/80 to-transparent opacity-80" />
+            <CardHeader className="relative space-y-4 p-6 sm:p-7">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-100">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                <span>Why this exists</span>
+              </div>
+              <CardTitle className="text-3xl leading-tight sm:text-[34px]">Giving should feel clear and trustworthy</CardTitle>
+              <CardDescription className="text-base leading-7 text-slate-200 sm:text-lg">
+                Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
+                simplifies the journey, highlighting verified, transparent causes with no distractions.
               </CardDescription>
             </CardHeader>
-            </Card>
+          </Card>
         </section>
 
 
