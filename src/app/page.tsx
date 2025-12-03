@@ -8,7 +8,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 export default function Home() {
   const highlights = [
     {
-      title: "100% independent",
+      title: "No referrals",
       description: "No commissions, sponsorships, referral payouts, or hidden agendas. Just trusted causes.",
       label: "Trust",
     },
