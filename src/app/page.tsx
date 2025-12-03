@@ -6,6 +6,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
+  const highlights = [
+    {
+      title: "100% independent",
+      description: "No commissions, sponsorships, referral payouts, or hidden agendas. Just trusted causes.",
+      label: "Trust",
+    },
+    {
+      title: "Privacy first",
+      description: "We never collect donor data or track browsing behaviour. Your intent to help stays yours.",
+      label: "Safety",
+    },
+    {
+      title: "Built for impact",
+      description: "Curated listings help your support reach people faster, with transparent sourcing and updates.",
+      label: "Impact",
+    },
+  ];
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.25),_transparent_60%)]" />
@@ -62,19 +80,23 @@ export default function Home() {
                 Read the mission
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-6 text-sm font-medium text-slate-300 sm:grid-cols-3">
-              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl break-auto hyphens-auto font-semibold text-white sm:text-4xl">100% independent</p>
-                <p className="text-sm text-slate-200">No commissions, sponsorships, or referral payouts.</p>
-              </div>
-              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold text-white sm:text-4xl">Privacy first</p>
-                <p className="text-sm text-slate-200">We never collect donor data or track browsing behaviour.</p>
-              </div>
-              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold text-white sm:text-4xl">Built for impact</p>
-                <p className="text-sm text-slate-200">Curated listings help your support reach people faster.</p>
-              </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {highlights.map((highlight) => (
+                <div
+                  key={highlight.title}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/[0.03] to-white/0 p-6 shadow-lg shadow-emerald-500/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60 hover:shadow-emerald-400/20"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(52,211,153,0.16),transparent_35%)] opacity-70 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/80 to-transparent opacity-70" />
+                  <div className="relative flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-100">
+                    <span className="rounded-full bg-white/10 px-3 py-1">{highlight.label}</span>
+                  </div>
+                  <h3 className="relative mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl">
+                    {highlight.title}
+                  </h3>
+                  <p className="relative mt-3 text-sm leading-6 text-slate-200">{highlight.description}</p>
+                </div>
+              ))}
             </div>
           </div>
             <Card className="bg-white/5 border border-white/10 text-white shadow-2xl">
