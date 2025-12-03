@@ -6,6 +6,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
+  const highlights = [
+    {
+      title: "No referrals",
+      description: "No commissions, sponsorships, referral payouts, or hidden agendas. Just trusted causes.",
+      label: "Trust",
+    },
+    {
+      title: "Privacy first",
+      description: "We never collect donor data or track browsing behaviour. Your intent to help stays yours.",
+      label: "Safety",
+    },
+    {
+      title: "Built for impact",
+      description: "Curated listings help your support reach people faster, with transparent sourcing and updates.",
+      label: "Impact",
+    },
+  ];
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.25),_transparent_60%)]" />
@@ -62,33 +80,47 @@ export default function Home() {
                 Read the mission
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-6 text-sm font-medium text-slate-300 sm:grid-cols-3">
-              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl break-auto hyphens-auto font-semibold text-white sm:text-4xl">100% independent</p>
-                <p className="text-sm text-slate-200">No commissions, sponsorships, or referral payouts.</p>
-              </div>
-              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold text-white sm:text-4xl">Privacy first</p>
-                <p className="text-sm text-slate-200">We never collect donor data or track browsing behaviour.</p>
-              </div>
-              <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold text-white sm:text-4xl">Built for impact</p>
-                <p className="text-sm text-slate-200">Curated listings help your support reach people faster.</p>
-              </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {highlights.map((highlight) => (
+                <div
+                  key={highlight.title}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/[0.03] to-white/0 p-6 shadow-lg shadow-emerald-500/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60 hover:shadow-emerald-400/20"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(52,211,153,0.16),transparent_35%)] opacity-70 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/80 to-transparent opacity-70" />
+                  <div className="relative flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-100">
+                    <span className="rounded-full bg-white/10 px-3 py-1">{highlight.label}</span>
+                  </div>
+                  <h3 className="relative mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl">
+                    {highlight.title}
+                  </h3>
+                  <p className="relative mt-3 text-sm leading-6 text-slate-200">{highlight.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-            <Card className="bg-white/5 border border-white/10 text-white shadow-2xl">
-            <CardHeader>
-              <Badge className="w-fit bg-emerald-500/20 text-emerald-200 ring-emerald-300/40">
-              Why this exists
-              </Badge>
-              <CardTitle className="text-3xl">Giving should feel clear and trustworthy</CardTitle>
-              <CardDescription className="text-slate-200">
-              Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
-              simplifies the journey, highlighting verified, transparent causes with no distractions.
+            <Card className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/[0.03] to-white/0 text-white shadow-lg shadow-emerald-500/40 transition duration-300 hover:-translate-y-1 hover:border-emerald-300/60 hover:shadow-emerald-400/20">
+            <Image
+              src="/images/canadian_flag.jpeg"
+              alt="Canadian flag"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(52,211,153,0.14),transparent_32%)] opacity-80 transition duration-500 group-hover:opacity-100" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/80 to-transparent opacity-80" />
+            <CardHeader className="relative space-y-4 p-6 sm:p-7">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-900/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>Why this exists</span>
+              </div>
+              <CardTitle className="text-3xl leading-tight sm:text-[34px]">Giving should feel clear and trustworthy</CardTitle>
+              <CardDescription className="text-base leading-7 text-slate-200 sm:text-lg">
+                Donors want to help their community but often do not know where to begin or which organizations to trust. HelpingCanada
+                simplifies the journey, highlighting verified, transparent causes with no distractions.
               </CardDescription>
             </CardHeader>
-            </Card>
+          </Card>
         </section>
 
 
