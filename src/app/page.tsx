@@ -110,8 +110,8 @@ export default function Home() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(52,211,153,0.14),transparent_32%)] opacity-80 transition duration-500 group-hover:opacity-100" />
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/80 to-transparent opacity-80" />
             <CardHeader className="relative space-y-4 p-6 sm:p-7">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-100">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-900/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 <span>Why this exists</span>
               </div>
               <CardTitle className="text-3xl leading-tight sm:text-[34px]">Giving should feel clear and trustworthy</CardTitle>
