@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const highlights = [
@@ -71,7 +73,8 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/donate">
-                <Button size="lg">Explore verified causes</Button>
+                <Button size="lg">
+                  Explore verified causes</Button>
               </Link>
               <Link
                 href="/mission"
