@@ -44,9 +44,9 @@ export default function Home() {
               <div className="space-y-2 text-white">
               <p className="text-xs uppercase tracking-[0.35em] text-emerald-200">Verified charities. Clear impact. Simple giving.</p>
               <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">Supporting trusted Canadian charities, starting with Vancouver.</h2>
-              <p className="max-w-2xl text-xs text-slate-100 sm:text-sm lg:text-base">
+              {/* <p className="max-w-2xl text-xs text-slate-100 sm:text-sm lg:text-base">
                 HelpingCanada connects people around the world to verified, mission-driven organizations making real impact in the Vancouver communities.
-              </p>
+              </p> */}
               </div>
             </div>
           </div>
