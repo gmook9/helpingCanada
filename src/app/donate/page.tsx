@@ -251,13 +251,13 @@ export default function DonatePage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-      {/* ===== background layer (same as the fixed home/mission pages) ===== */}
+      {/* background layer */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div
           className="
             absolute inset-0
-            opacity-[0.18]
-            [mask-image:radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
+            opacity-[0.28]
+            mask-[radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
           "
         >
           <DotGrid
@@ -278,7 +278,7 @@ export default function DonatePage() {
         <div className="absolute inset-0 opacity-60 [background:radial-gradient(900px_circle_at_50%_0%,rgba(16,185,129,0.18),transparent_60%)]" />
       </div>
 
-      {/* ===== content layer ===== */}
+      {/* content layer */}
       <div className="relative z-10">
         <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 pb-24 pt-24 sm:px-10 lg:px-16">
           <section className="space-y-8">
