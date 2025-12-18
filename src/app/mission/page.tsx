@@ -3,41 +3,36 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import DotGrid from "@/components/DotGrid";
 
 const vancouverScenes = [
   {
     title: "Stanley Park at dusk",
-    description: "A peaceful spot where nature and city life blend, highlighting the importance of protecting local environments.",
+    description:
+      "A peaceful spot where nature and city life blend, highlighting the importance of protecting local environments.",
     src: "/images/stanley_park.jpg",
     alt: "Stanley Park seawall at sunset",
   },
   {
     title: "Granville Street in the rain",
-    description: "Busy downtown streets that thrive thanks to community support and neighborly help.",
+    description:
+      "Busy downtown streets that thrive thanks to community support and neighborly help.",
     src: "/images/granville-street-rain.jpg",
     alt: "Rain-soaked Granville Street in Vancouver",
   },
   {
     title: "Vancouver from above",
-    description: "A view of the city skyline, reminding us that all areas of Vancouver are important, not just the center.",
+    description:
+      "A view of the city skyline, reminding us that all areas of Vancouver are important, not just the center.",
     src: "/images/Vancouver-Skyline.jpg",
     alt: "Aerial view of Vancouver skyline",
   },
 ];
 
 const heroStats = [
-  {
-    value: "10",
-    label: "Verified local orgs",
-  },
-  {
-    value: "$0",
-    label: "No referral payments",
-  },
-  {
-    value: "0%",
-    label: "No additional fees",
-  },
+  { value: "10", label: "Verified local orgs" },
+  { value: "$0", label: "No referral payments" },
+  { value: "0%", label: "No additional fees" },
 ];
 
 const trustLayers = [
@@ -58,203 +53,169 @@ const trustLayers = [
   },
 ];
 
-
 export default function MissionPage() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.35),_transparent_60%)]" />
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-24 sm:px-10 lg:px-16">
-        <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.04] px-8 py-16 shadow-[0_20px_60px_rgba(15,23,42,0.45)]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_55%)]" />
-          <div className="pointer-events-none absolute -top-12 right-12 h-32 w-32 rounded-full bg-emerald-400/40 blur-[120px]" />
-          <div className="pointer-events-none absolute bottom-0 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[140px]" />
-          <div className="relative grid gap-16 lg:grid-cols-[1.05fr,0.95fr]">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-slate-950/50 px-5 py-2 text-xs font-semibold uppercase tracking-[0.45em] text-emerald-200/90">
-                <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(16,185,129,0.9)]" />
-                Mission
-              </div>
-              <div className="space-y-4">
-                <h1 className="text-left text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-                  Empowering Canadians to give confidently.
-                </h1>
-                <p className="text-lg leading-8 text-slate-200/90 sm:text-xl">
-                  We combine local expertise, transparent reporting, and privacy-first design so you can direct generosity where it matters most without friction.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/"
-                  className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 px-8 py-4 text-lg font-semibold text-white shadow-[0_15px_35px_rgba(6,95,70,0.35)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
-                >
-                  Back to home
-                </Link>
-                <Link
-                  href="/donate"
-                  className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full border border-white/30 bg-white/5 px-8 py-4 text-lg font-semibold text-white backdrop-blur transition hover:border-emerald-200 hover:text-emerald-100"
-                >
-                  Explore donations
-                </Link>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-3">
-                {heroStats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-2xl border border-white/10 bg-slate-950/50 px-5 py-6 text-left backdrop-blur-xl"
-                  >
-                    <p className="text-3xl font-semibold text-white">{stat.value}</p>
-                    <p className="text-xs uppercase tracking-[0.25em] text-slate-300">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      {/* background layer*/}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* dot grid */}
+        <div
+          className="
+            absolute inset-0
+            opacity-[0.18]
+            mask-[radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
+          "
+        >
+          <DotGrid
+            dotSize={10}
+            gap={22}
+            baseColor="#22d3ee"
+            activeColor="#67e8f9"
+            proximity={140}
+            shockRadius={240}
+            shockStrength={5}
+            resistance={850}
+            returnDuration={1.6}
+            className="p-0"
+          />
+        </div>
 
-            <div className="relative rounded-[28px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 text-left backdrop-blur-2xl">
-              <div className="pointer-events-none absolute -top-10 right-8 h-16 w-16 rounded-full bg-sky-400/30 blur-[80px]" />
-              <div className="pointer-events-none absolute bottom-6 left-6 h-24 w-24 rounded-full bg-emerald-400/20 blur-[90px]" />
-              <div className="relative space-y-6">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200/80">
-                  <span className="h-1.5 w-6 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400" />
-                  Trust Architecture
+        {/* darken so dots never overpower */}
+        <div className="absolute inset-0 bg-slate-950/70" />
+
+        {/* subtle top glow */}
+        <div className="absolute inset-0 opacity-60 [background:radial-gradient(900px_circle_at_50%_0%,rgba(16,185,129,0.18),transparent_60%)]" />
+      </div>
+
+      {/*  content layer */}
+      <div className="relative z-10">
+        <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-24 sm:px-10 lg:px-16">
+          {/* hero */}
+          <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/0.4 px-8 py-16 shadow-[0_20px_60px_rgba(15,23,42,0.45)]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.18),transparent_55%)]" />
+            <div className="pointer-events-none absolute -top-12 right-12 h-32 w-32 rounded-full bg-emerald-400/40 blur-[120px]" />
+            <div className="pointer-events-none absolute bottom-0 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[140px]" />
+
+            <div className="relative grid gap-16 lg:grid-cols-[1.05fr,0.95fr]">
+              <div className="space-y-8">
+                <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-slate-950/50 px-5 py-2 text-xs font-semibold uppercase tracking-[0.45em] text-emerald-200/90">
+                  <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(16,185,129,0.9)]" />
+                  Mission
                 </div>
-                <p className="text-2xl font-semibold text-white">
-                  Futuristic transparency built for modern philanthropy.
-                </p>
+
                 <div className="space-y-4">
-                  {trustLayers.map((layer) => (
+                  <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+                    Empowering Canadians to give confidently.
+                  </h1>
+                  <p className="text-lg leading-8 text-slate-200/90 sm:text-xl">
+                    We combine local expertise, transparent reporting, and privacy-first design so you can direct generosity where it matters most without friction.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/"
+                    className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-sky-500 px-8 py-4 text-lg font-semibold text-white shadow-[0_15px_35px_rgba(6,95,70,0.35)] transition hover:brightness-110"
+                  >
+                    Back to home
+                  </Link>
+                  <Link
+                    href="/donate"
+                    className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full border border-white/30 bg-white/5 px-8 py-4 text-lg font-semibold text-white backdrop-blur transition hover:border-emerald-200 hover:text-emerald-100"
+                  >
+                    Explore donations
+                  </Link>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {heroStats.map((stat) => (
                     <div
-                      key={layer.title}
-                      className="rounded-2xl border border-white/10 bg-slate-950/50 p-5 backdrop-blur-xl transition hover:border-emerald-200/60"
+                      key={stat.label}
+                      className="rounded-2xl border border-white/10 bg-slate-950/50 px-5 py-6 backdrop-blur-xl"
                     >
-                      <p className="text-lg font-semibold text-white">{layer.title}</p>
-                      <p className="text-sm text-slate-300">{layer.description}</p>
+                      <p className="text-3xl font-semibold text-white">{stat.value}</p>
+                      <p className="text-xs uppercase tracking-[0.25em] text-slate-300">
+                        {stat.label}
+                      </p>
                     </div>
                   ))}
                 </div>
-                <div className="rounded-2xl border border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-6 text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)]">
-                  No advertising, no pay-to-play, and no surprise data collection—just glassy clarity for every Canadian donor.
-                </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
-          <div className="space-y-4 text-center sm:text-left">
-            <Badge variant="neutral" className="mx-auto w-fit bg-white/10 text-white ring-white/40 sm:mx-0">
-              Grounded in the places people care about
-            </Badge>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Real Vancouver stories shape every update.</h2>
-            <p className="text-lg text-slate-200">
-              This is our way of giving back to the beautiful city of Vancouver, celebrating its communities and supporting those who make it thrive.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {vancouverScenes.map((scene) => (
-              <Card key={scene.title} className="overflow-hidden border border-white/10">
-                <div className="relative h-64 w-full">
-                  <Image
-                    src={scene.src}
-                    alt={scene.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 300px"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/70 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
-                    <p className="text-sm uppercase tracking-[0.25em] text-emerald-200">{scene.title}</p>
-                    <p className="text-base text-slate-100">{scene.description}</p>
+              {/* trust column */}
+              <div className="relative rounded-[28px] border border-white/10 bg-linear-to-b from-white/10 via-white/5 to-transparent p-8 backdrop-blur-2xl">
+                <div className="pointer-events-none absolute -top-10 right-8 h-16 w-16 rounded-full bg-sky-400/30 blur-[80px]" />
+                <div className="pointer-events-none absolute bottom-6 left-6 h-24 w-24 rounded-full bg-emerald-400/20 blur-[90px]" />
+
+                <div className="relative space-y-6">
+                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200/80">
+                    <span className="h-1.5 w-6 rounded-full bg-linear-to-r from-emerald-300 to-sky-400" />
+                    Trust Architecture
+                  </div>
+
+                  <p className="text-2xl font-semibold text-white">
+                    Futuristic transparency built for modern philanthropy.
+                  </p>
+
+                  <div className="space-y-4">
+                    {trustLayers.map((layer) => (
+                      <div
+                        key={layer.title}
+                        className="rounded-2xl border border-white/10 bg-slate-950/50 p-5 backdrop-blur-xl transition hover:border-emerald-200/60"
+                      >
+                        <p className="text-lg font-semibold text-white">{layer.title}</p>
+                        <p className="text-sm text-slate-300">{layer.description}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="rounded-2xl border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-6 text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)]">
+                    No advertising, no pay-to-play, and no surprise data collection—just glassy clarity for every Canadian donor.
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section className="rounded-[32px] border border-white/15 bg-gradient-to-br from-slate-950/70 via-slate-900/70 to-slate-950/40 p-8 shadow-[0_25px_60px_rgba(15,23,42,0.65)] sm:p-10">
-          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="space-y-6">
-              <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-slate-950/70 p-6 text-center shadow-[0_20px_45px_rgba(15,23,42,0.45)] backdrop-blur-2xl">
-              <div className="pointer-events-none absolute -top-10 right-6 h-24 w-24 rounded-full bg-emerald-400/30 blur-[100px]" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full bg-gradient-to-t from-emerald-500/10 to-transparent" />
-
-              <div className="relative flex items-center justify-between text-xs font-semibold uppercase tracking-[0.35em] text-emerald-100">
-              <span>Status</span>
-              <span>Live roadmap</span>
               </div>
+            </div>
+          </section>
 
-              <div className="relative mt-6 space-y-5">
-              {[
-              {
-          label: "Now",
-          detail: "Expanding the available donation list.",
-              },
-              {
-          label: "Next",
-          detail: "Expanding coverage to more areas.",
-              },
-              {
-          label: "Later",
-          detail: "Implementing expanded verification techniques.",
-              },
-              ].map((step, index) => (
-              <div key={step.label} className="relative pl-8 text-left">
-          <span
-          aria-hidden="true"
-          className="absolute left-0 top-2 h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.85)]"
-          />
-          {index < [
-          {
-          label: "Now",
-          detail: "Expanding the available donation list.",
-          },
-          {
-          label: "Next",
-          detail: "Expanding coverage to more areas.",
-          },
-          {
-          label: "Later",
-          detail: "Implementing expanded verification techniques.",
-          },
-          ].length - 1 && (
-          <span aria-hidden="true" className="absolute left-0 top-5 h-9 w-px bg-white/10" />
-          )}
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-200">{step.label}</p>
-          <p className="text-base text-slate-100">{step.detail}</p>
-              </div>
+          {/* vancouver scenes */}
+          <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
+            <div className="space-y-4">
+              <Badge variant="neutral" className="w-fit bg-white/10 text-white ring-white/40">
+                Grounded in the places people care about
+              </Badge>
+              <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+                Real Vancouver stories shape every update.
+              </h2>
+              <p className="text-lg text-slate-200">
+                This is our way of giving back to the beautiful city of Vancouver, celebrating its communities and supporting those who make it thrive.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              {vancouverScenes.map((scene) => (
+                <Card key={scene.title} className="overflow-hidden border border-white/10">
+                  <div className="relative h-64">
+                    <Image
+                      src={scene.src}
+                      alt={scene.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 300px"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/55" />
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <p className="text-sm uppercase tracking-[0.25em] text-emerald-200">
+                        {scene.title}
+                      </p>
+                      <p className="text-base text-slate-100">{scene.description}</p>
+                    </div>
+                  </div>
+                </Card>
               ))}
-              </div>
-              </div>
             </div>
-            <div className="flex flex-col items-center justify-center space-y-4">
-              <Link
-          href="https://github.com/gmook9/helpingCanada"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full border border-white/20 bg-white/5 p-4 transition hover:border-emerald-200 hover:bg-emerald-500/10"
-              >
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="text-white"
-          >
-            <path
-              d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-              fill="currentColor"
-            />
-          </svg>
-              </Link>
-                <div className="rounded-2xl border border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-2 text-center text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)] transition">
-                Open source
-                </div>
-            </div>
-            </div>
-            </section>
-
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
