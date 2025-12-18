@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import DotGrid from "@/components/DotGrid";
 
 export default function Home() {
   const highlights = [
@@ -25,7 +26,21 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+      <div className="absolute inset-0 -z-20 opacity-60">
+        <DotGrid
+          dotSize={12}
+          gap={28}
+          baseColor="#14b8a6"
+          activeColor="#34d399"
+          proximity={160}
+          shockRadius={260}
+          shockStrength={5}
+          resistance={900}
+          returnDuration={1.8}
+          className="p-0 pointer-events-none"
+        />
+      </div>
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.25),_transparent_60%)]" />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-32 pt-24 sm:px-10 lg:px-16">
         <section className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-emerald-500/15">
