@@ -197,7 +197,7 @@ export default function Home() {
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                   <span>Why this exists</span>
                 </div>
-                <CardTitle className="text-3xl leading-tight sm:text-[34px]">
+                <CardTitle className="text-3xl leading-tight sm:text-[34px] text-white">
                   Giving should feel clear and trustworthy
                 </CardTitle>
                 <CardDescription className="text-base leading-7 text-slate-200 sm:text-lg">
