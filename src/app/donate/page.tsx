@@ -238,21 +238,6 @@ const organizations = [
   icon: IconName;
 }[];
 
-const givingPrinciples = [
-  {
-    title: "Prioritize transparency",
-    copy: "Review annual reports and impact statements so you understand how funds get deployed.",
-  },
-  {
-    title: "Support monthly",
-    copy: "Recurring gifts help charities plan long-term services rather than reacting to spikes and dips.",
-  },
-  {
-    title: "Match your values",
-    copy: "Pick a mix of causes—environment, housing, youth—so your generosity mirrors the city you care about.",
-  },
-];
-
 export default function DonatePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
