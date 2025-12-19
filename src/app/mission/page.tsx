@@ -59,11 +59,6 @@ const trustLayers = [
   },
 ];
 
-const openSourceSteps = [
-  { label: "Now", detail: "Expanding the available donation list." },
-  { label: "Next", detail: "Expanding coverage to more areas." },
-  { label: "Later", detail: "Implementing expanded verification techniques." },
-];
 
 export default function MissionPage() {
   return (
@@ -235,42 +230,10 @@ export default function MissionPage() {
             </div>
 
             <Card className="border border-white/10 bg-slate-950/40">
-              <CardHeader>
-                <CardTitle className="text-white">Open source roadmap</CardTitle>
-                <CardDescription className="text-slate-300">
-                  Track what’s shipping now, what’s next, and what’s coming later.
-                </CardDescription>
-              </CardHeader>
+
 
               <CardContent>
-                <div className="grid gap-8 lg:grid-cols-[1fr,auto] lg:items-start">
-                  <div>
-                    <div className="relative flex items-center justify-between text-xs font-semibold uppercase tracking-[0.35em] text-emerald-100">
-                      <span>Status</span>
-                      <span>Live roadmap</span>
-                    </div>
-
-                    <div className="relative mt-6 space-y-5">
-                      {openSourceSteps.map((step, index) => (
-                        <div key={step.label} className="relative pl-8 text-left">
-                          <span
-                            aria-hidden="true"
-                            className="absolute left-0 top-2 h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.85)]"
-                          />
-                          {index < openSourceSteps.length - 1 && (
-                            <span
-                              aria-hidden="true"
-                              className="absolute left-0 top-5 h-9 w-px bg-white/10"
-                            />
-                          )}
-                          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-200">
-                            {step.label}
-                          </p>
-                          <p className="text-base text-slate-100">{step.detail}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                
 
                   <div className="flex flex-col items-center justify-center space-y-4">
                     <Link
@@ -298,7 +261,6 @@ export default function MissionPage() {
                       Open source
                     </div>
                   </div>
-                </div>
               </CardContent>
             </Card>
           </section>
