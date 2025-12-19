@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import DotGrid from "@/components/DotGrid";
 
 const vancouverScenes = [
@@ -53,12 +59,16 @@ const trustLayers = [
   },
 ];
 
+const openSourceSteps = [
+  { label: "Now", detail: "Expanding the available donation list." },
+  { label: "Next", detail: "Expanding coverage to more areas." },
+  { label: "Later", detail: "Implementing expanded verification techniques." },
+];
+
 export default function MissionPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-      {/* background layer*/}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        {/* dot grid */}
         <div
           className="
             absolute inset-0
@@ -80,17 +90,12 @@ export default function MissionPage() {
           />
         </div>
 
-        {/* darken so dots never overpower */}
         <div className="absolute inset-0 bg-slate-950/70" />
-
-        {/* subtle top glow */}
         <div className="absolute inset-0 opacity-60 [background:radial-gradient(900px_circle_at_50%_0%,rgba(16,185,129,0.18),transparent_60%)]" />
       </div>
 
-      {/*  content layer */}
       <div className="relative z-10">
         <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-24 sm:px-10 lg:px-16">
-          {/* hero */}
           <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/0.4 px-8 py-16 shadow-[0_20px_60px_rgba(15,23,42,0.45)]">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.18),transparent_55%)]" />
             <div className="pointer-events-none absolute -top-12 right-12 h-32 w-32 rounded-full bg-emerald-400/40 blur-[120px]" />
@@ -108,7 +113,8 @@ export default function MissionPage() {
                     Empowering Canadians to give confidently.
                   </h1>
                   <p className="text-lg leading-8 text-slate-200/90 sm:text-xl">
-                    We combine local expertise, transparent reporting, and privacy-first design so you can direct generosity where it matters most without friction.
+                    We combine local expertise, transparent reporting, and privacy-first design so you
+                    can direct generosity where it matters most without friction.
                   </p>
                 </div>
 
@@ -142,7 +148,6 @@ export default function MissionPage() {
                 </div>
               </div>
 
-              {/* trust column */}
               <div className="relative rounded-[28px] border border-white/10 bg-linear-to-b from-white/10 via-white/5 to-transparent p-8 backdrop-blur-2xl">
                 <div className="pointer-events-none absolute -top-10 right-8 h-16 w-16 rounded-full bg-sky-400/30 blur-[80px]" />
                 <div className="pointer-events-none absolute bottom-6 left-6 h-24 w-24 rounded-full bg-emerald-400/20 blur-[90px]" />
@@ -170,14 +175,14 @@ export default function MissionPage() {
                   </div>
 
                   <div className="rounded-2xl border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-6 text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)]">
-                    No advertising, no pay-to-play, and no surprise data collection—just glassy clarity for every Canadian donor.
+                    No advertising, no pay-to-play, and no surprise data collection—just glassy clarity
+                    for every Canadian donor.
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* vancouver scenes */}
           <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
             <div className="space-y-4">
               <Badge variant="neutral" className="w-fit bg-white/10 text-white ring-white/40">
@@ -187,7 +192,8 @@ export default function MissionPage() {
                 Real Vancouver stories shape every update.
               </h2>
               <p className="text-lg text-slate-200">
-                This is our way of giving back to the beautiful city of Vancouver, celebrating its communities and supporting those who make it thrive.
+                This is our way of giving back to the beautiful city of Vancouver, celebrating its
+                communities and supporting those who make it thrive.
               </p>
             </div>
 
@@ -213,6 +219,88 @@ export default function MissionPage() {
                 </Card>
               ))}
             </div>
+          </section>
+
+          <section className="space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-emerald-500/10">
+            <div className="space-y-4">
+              <Badge variant="neutral" className="w-fit bg-white/10 text-white ring-white/40">
+                Open Source
+              </Badge>
+              <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+                Built in public, so trust is earned.
+              </h2>
+              <p className="text-lg text-slate-200">
+                Status and roadmap are public — and the code is open for anyone to inspect.
+              </p>
+            </div>
+
+            <Card className="border border-white/10 bg-slate-950/40">
+              <CardHeader>
+                <CardTitle className="text-white">Open source roadmap</CardTitle>
+                <CardDescription className="text-slate-300">
+                  Track what’s shipping now, what’s next, and what’s coming later.
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <div className="grid gap-8 lg:grid-cols-[1fr,auto] lg:items-start">
+                  <div>
+                    <div className="relative flex items-center justify-between text-xs font-semibold uppercase tracking-[0.35em] text-emerald-100">
+                      <span>Status</span>
+                      <span>Live roadmap</span>
+                    </div>
+
+                    <div className="relative mt-6 space-y-5">
+                      {openSourceSteps.map((step, index) => (
+                        <div key={step.label} className="relative pl-8 text-left">
+                          <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-2 h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.85)]"
+                          />
+                          {index < openSourceSteps.length - 1 && (
+                            <span
+                              aria-hidden="true"
+                              className="absolute left-0 top-5 h-9 w-px bg-white/10"
+                            />
+                          )}
+                          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-200">
+                            {step.label}
+                          </p>
+                          <p className="text-base text-slate-100">{step.detail}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center space-y-4">
+                    <Link
+                      href="https://github.com/gmook9/helpingCanada"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-white/20 bg-white/5 p-4 transition hover:border-emerald-200 hover:bg-emerald-500/10"
+                    >
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="text-white"
+                      >
+                        <path
+                          d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </Link>
+
+                    <div className="rounded-2xl border border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-2 text-center text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)] transition">
+                      Open source
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </section>
         </main>
       </div>
