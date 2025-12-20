@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Vancouver Foundation",
+    "url": "https://www.vancouverfoundation.ca/",
+    "focus": "Community & Equity",
+    "description": "One of Canada's largest community foundations, investing in grassroots projects, scholarships, and systems change across BC.",
+    "impact": "Your gift strengthens generational programs that respond to emerging local needs quickly and transparently.",
+    "icon": "foundation"
+  },
+  {
+    "name": "David Suzuki Foundation",
+    "url": "https://davidsuzuki.org/",
+    "focus": "Environment",
+    "description": "Science-based advocacy and education campaigns that protect wildlife, climate, and clean air from a Vancouver base.",
+    "impact": "Support long-horizon policy work and community action that keeps BC's ecosystems resilient.",
+    "icon": "environment"
+  },
+  {
+    "name": "Union Gospel Mission",
+    "url": "https://www.ugm.ca/",
+    "focus": "Housing & Recovery",
+    "description": "Shelter, addiction recovery, and family programs rooted in the Downtown Eastside for more than 80 years.",
+    "impact": "Every donation supplies meals, warm beds, and wraparound support for neighbours experiencing homelessness.",
+    "icon": "housing"
+  },
+  {
+    "name": "Aunt Leah’s Community Foundation",
+    "url": "https://www.auntleahs.org/",
+    "focus": "Youth in Care",
+    "description": "Helps young people in and from foster care build independence with housing, training, and family-like networks.",
+    "impact": "Stabilize transitions to adulthood for youth who often age out of services without support.",
+    "icon": "youth"
+  },
+  {
+    "name": "Greater Vancouver Food Bank",
+    "url": "https://www.foodbank.bc.ca/",
+    "focus": "Food Security",
+    "description": "Procures and distributes nutritious food for tens of thousands of people each month across the Lower Mainland.",
+    "impact": "Multiply your dollar through bulk purchasing and community partnerships that fight hunger.",
+    "icon": "food"
+  },
+  {
+    "name": "Pathways Clubhouse Society",
+    "url": "https://www.pathwaysclubhouse.ca/",
+    "focus": "Mental Health",
+    "description": "A recovery-oriented clubhouse providing employment, social, and wellness programs for adults living with mental illness.",
+    "impact": "Help sustain peer-led spaces that reduce isolation and open pathways to meaningful work.",
+    "icon": "mentalHealth"
+  },
+  {
+    "name": "Quest Outreach Society",
+    "url": "https://www.questoutreach.ca/",
+    "focus": "Food Rescue",
+    "description": "Operates social supermarkets and outreach services that divert surplus food toward communities facing affordability gaps.",
+    "impact": "Reduce waste while making dignified, affordable shopping possible for thousands of families.",
+    "icon": "verification"
+  },
+  {
+    "name": "Vancouver Orphan Kitten Rescue Association (VOKRA)",
+    "url": "https://www.vokra.ca/",
+    "focus": "Animal Welfare",
+    "description": "A no-kill cat rescue that coordinates foster care, medical treatment, and trap-neuter-return programs citywide.",
+    "impact": "Fund emergency vet care and supplies that keep vulnerable animals safe until they find permanent homes.",
+    "icon": "rescue"
+  },
+  {
+    "name": "Better Environmentally Sound Transportation (BEST)",
+    "url": "https://best.bc.ca/",
+    "focus": "Sustainable Transit",
+    "description": "Advocates for cycling, transit, and accessible mobility solutions across Metro Vancouver.",
+    "impact": "Advance climate-friendly transportation options that connect communities without a car.",
+    "icon": "transport"
+  },
+  {
+    "name": "Portland Hotel Society",
+    "url": "https://www.phs.bc.ca/",
+    "focus": "Supportive Housing",
+    "description": "Delivers housing, harm reduction, and community health services with deep roots in the Downtown Eastside.",
+    "impact": "Keep life-saving front-line programs running for residents facing multiple systemic barriers.",
+    "icon": "mentalHealth"
+  }
+]

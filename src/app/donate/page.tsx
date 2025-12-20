@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 
 import DotGrid from "@/components/DotGrid";
@@ -192,6 +192,11 @@ const organizations = [
 
 export default function DonatePage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredOrganizations = useMemo(() => {
     const term = searchQuery.trim().toLowerCase();
@@ -212,18 +217,20 @@ export default function DonatePage() {
             mask-[radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
           "
         >
-          <DotGrid
-            dotSize={10}
-            gap={22}
-            baseColor="#22d3ee"
-            activeColor="#67e8f9"
-            proximity={140}
-            shockRadius={240}
-            shockStrength={5}
-            resistance={850}
-            returnDuration={1.6}
-            className="p-0"
-          />
+          {mounted && (
+            <DotGrid
+              dotSize={10}
+              gap={22}
+              baseColor="#22d3ee"
+              activeColor="#67e8f9"
+              proximity={140}
+              shockRadius={240}
+              shockStrength={5}
+              resistance={850}
+              returnDuration={1.6}
+              className="p-0"
+            />
+          )}
         </div>
 
         <div className="absolute inset-0 bg-slate-950/70" />
