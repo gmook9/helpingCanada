@@ -1,129 +1,81 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 
 import DotGrid from "@/components/DotGrid";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  HiOutlineBuildingOffice2,
+  HiOutlineHome,
+  HiOutlineHeart,
+  HiOutlineShieldCheck,
+  HiOutlineCheckCircle,
+  HiOutlineMagnifyingGlass,
+} from "react-icons/hi2";
+import { FaUtensils, FaCat } from "react-icons/fa";
+import { FaLeaf, FaBicycle } from "react-icons/fa6";
 
-const IconFrame = ({ children }: { children: ReactNode }) => (
+const SearchIcon = () => (
+  <HiOutlineMagnifyingGlass className="h-5 w-5 text-emerald-200" aria-hidden />
+);
+
+const IconFrame = ({ children, className }: { children: ReactNode; className?: string }) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.8"
+    strokeWidth="1.9"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="h-6 w-6 text-emerald-700"
+    className={className || "h-4 w-4"}
     aria-hidden
   >
     {children}
   </svg>
 );
 
-const ArrowUpRightIcon = () => (
-  <IconFrame>
+type IconBadgeProps = {
+  icon: React.ElementType;
+  size?: "sm" | "md";
+};
+
+const IconBadge = ({ icon: Icon, size = "md" }: IconBadgeProps) => {
+  const sizeClass = size === "sm" ? "h-6 w-6" : "h-7 w-7";
+
+  return (
+    <div
+      className="
+        grid h-12 w-12 place-items-center shrink-0
+        rounded-2xl border border-white/12
+        bg-white/80 text-emerald-600
+        shadow-[0_10px_40px_rgba(0,0,0,0.22)]
+      "
+    >
+      <Icon className={sizeClass} />
+    </div>
+  );
+};
+
+const ArrowUpRightIcon = ({ className }: { className?: string }) => (
+  <IconFrame className={className}>
     <path d="M7 17 17 7" />
     <path d="M7 7h10v10" />
   </IconFrame>
 );
 
-const BuildingIcon = () => (
-  <IconFrame>
-    <rect x="4" y="3" width="16" height="18" rx="2" />
-    <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h6M12 21v-4" />
-  </IconFrame>
-);
-
-const LeafIcon = () => (
-  <IconFrame>
-    <path d="M5 13c0-5 4-9 7-9s7 4 7 9-4 9-7 9-7-4-7-9Z" />
-    <path d="M12 4v16" />
-  </IconFrame>
-);
-
-const HomeIcon = () => (
-  <IconFrame>
-    <path d="M4 11 12 5l8 6" />
-    <path d="M5 10v10h14V10" />
-    <path d="M10 20v-5h4v5" />
-  </IconFrame>
-);
-
-const HeartIcon = () => (
-  <IconFrame>
-    <path d="M12 20s-7-4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6-7 10-7 10Z" />
-  </IconFrame>
-);
-
-const UtensilsIcon = () => (
-  <IconFrame>
-    <path d="M5 4v8" />
-    <path d="M9 4v8" />
-    <path d="M5 12c0 4 4 4 4 0" />
-    <path d="M13 4h4v6a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2Z" />
-    <path d="M15 12v8" />
-  </IconFrame>
-);
-
-const ShieldIcon = () => (
-  <IconFrame>
-    <path d="M12 21c-5-2-7-4.8-7-10V6l7-3 7 3v5c0 5.2-2 8-7 10Z" />
-  </IconFrame>
-);
-
-const CatIcon = () => (
-  <IconFrame>
-    <path d="M5 7V4l3 2 4-2 4 2 3-2v3" />
-    <path d="M6 12c0 5 3 8 6 8s6-3 6-8" />
-    <path d="M9 13h.01M15 13h.01" />
-    <path d="M9 17s1.5 1 3 1 3-1 3-1" />
-  </IconFrame>
-);
-
-const BikeIcon = () => (
-  <IconFrame>
-    <circle cx="6.5" cy="17.5" r="3.5" />
-    <circle cx="17.5" cy="17.5" r="3.5" />
-    <path d="M6 17.5 10 8h4l3 6.5" />
-    <path d="M10 8 8 13h6" />
-  </IconFrame>
-);
-
-const CheckIcon = () => (
-  <IconFrame>
-    <path d="m5.5 12.5 3.5 3.5 9-9" />
-  </IconFrame>
-);
-
-const SearchIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-5 w-5 text-emerald-200"
-    aria-hidden
-  >
-    <circle cx="11" cy="11" r="7" />
-    <path d="m16.5 16.5 4 4" />
-  </svg>
-);
-
 const iconComponents = {
-  foundation: BuildingIcon,
-  environment: LeafIcon,
-  housing: HomeIcon,
-  youth: HeartIcon,
-  food: UtensilsIcon,
-  mentalHealth: ShieldIcon,
-  rescue: CatIcon,
-  transport: BikeIcon,
-  verification: CheckIcon,
+  foundation: { icon: HiOutlineBuildingOffice2, size: "md" },
+  environment: { icon: FaLeaf, size: "md" },
+  housing: { icon: HiOutlineHome, size: "md" },
+  youth: { icon: HiOutlineHeart, size: "md" },
+  food: { icon: FaUtensils, size: "sm" },
+  mentalHealth: { icon: HiOutlineShieldCheck, size: "md" },
+  rescue: { icon: FaCat, size: "sm" },
+  transport: { icon: FaBicycle, size: "sm" },
+  verification: { icon: HiOutlineCheckCircle, size: "md" },
 } as const;
 
 type IconName = keyof typeof iconComponents;
@@ -240,6 +192,11 @@ const organizations = [
 
 export default function DonatePage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredOrganizations = useMemo(() => {
     const term = searchQuery.trim().toLowerCase();
@@ -260,18 +217,20 @@ export default function DonatePage() {
             mask-[radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
           "
         >
-          <DotGrid
-            dotSize={10}
-            gap={22}
-            baseColor="#22d3ee"
-            activeColor="#67e8f9"
-            proximity={140}
-            shockRadius={240}
-            shockStrength={5}
-            resistance={850}
-            returnDuration={1.6}
-            className="p-0"
-          />
+          {mounted && (
+            <DotGrid
+              dotSize={10}
+              gap={22}
+              baseColor="#22d3ee"
+              activeColor="#67e8f9"
+              proximity={140}
+              shockRadius={240}
+              shockStrength={5}
+              resistance={850}
+              returnDuration={1.6}
+              className="p-0"
+            />
+          )}
         </div>
 
         <div className="absolute inset-0 bg-slate-950/70" />
@@ -358,35 +317,67 @@ export default function DonatePage() {
             )}
 
             {filteredOrganizations.map((organization) => {
-              const Icon = iconComponents[organization.icon];
+              const iconMeta = iconComponents[organization.icon];
+
               return (
                 <Card
                   key={organization.name}
-                  className="group flex w-full max-w-xl flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40 md:max-w-none"
+                  className="
+                    group flex w-full max-w-xl flex-col justify-between
+                    rounded-3xl border bg-blue-950/90 border-white/12
+                    bg-linear-to-b from-white/15 via-white/10 to-white/4
+                    text-slate-100 backdrop-blur-xl
+                    shadow-[0_18px_70px_rgba(0,0,0,0.38)]
+                    transition duration-300
+                    hover:border-emerald-200/35
+                    hover:from-slate-900/62 hover:via-slate-950/40 hover:to-slate-950/25
+                    hover:shadow-[0_22px_80px_rgba(16,185,129,0.16)]
+                    md:max-w-none
+                  "
                 >
                   <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
-                          <Icon />
+                      <div className="flex items-start gap-4">
+                        <div className="mt-0.5 shrink-0">
+                          <IconBadge icon={iconMeta.icon} size={iconMeta.size} />
                         </div>
-                        <div>
-                          <CardTitle className="text-2xl">{organization.name}</CardTitle>
-                          <CardDescription className="text-slate-600">{organization.focus}</CardDescription>
+
+                        <div className="min-w-0 space-y-0.5">
+                          <CardTitle className="text-2xl leading-snug text-white">
+                            {organization.name}
+                          </CardTitle>
+                          <CardDescription className="text-slate-200/85">
+                            {organization.focus}
+                          </CardDescription>
                         </div>
                       </div>
-                      <Badge className="flex-shrink-0 whitespace-nowrap bg-emerald-50 text-emerald-700 ring-emerald-200">
+
+                      <Badge className="shrink-0 whitespace-nowrap bg-emerald-500/12 text-emerald-100 ring-emerald-300/30">
                         CRA Registered
                       </Badge>
                     </div>
-                    <p className="text-base text-slate-700">{organization.description}</p>
+
+                    <p className="text-base leading-relaxed text-slate-100/80">
+                      {organization.description}
+                    </p>
                   </CardHeader>
 
-                  <CardContent className="flex flex-col gap-4 border-t border-slate-100 pt-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-slate-700">{organization.impact}</p>
+                  <CardContent className="flex flex-col gap-4 border-t border-white/10 pt-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-slate-100/75">
+                      {organization.impact}
+                    </p>
+
                     <Button
                       variant="solid"
-                      className="bg-emerald-600 text-white hover:bg-emerald-500 group-hover:bg-emerald-500"
+                      className="
+                        h-10 rounded-full
+                        bg-emerald-600 text-white
+                        px-4 text-sm font-semibold
+                        shadow-[0_10px_26px_rgba(16,185,129,0.30)]
+                        transition
+                        hover:bg-emerald-500
+                        focus-visible:ring-2 focus-visible:ring-emerald-300/60 focus-visible:ring-offset-0
+                      "
                     >
                       <a
                         href={organization.url}
@@ -394,8 +385,8 @@ export default function DonatePage() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2"
                       >
-                        Donate now
-                        <ArrowUpRightIcon />
+                        Donate
+                        <ArrowUpRightIcon className="h-4 w-4 text-white" />
                       </a>
                     </Button>
                   </CardContent>
