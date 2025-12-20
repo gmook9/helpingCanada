@@ -24,7 +24,6 @@ const BuildingIcon = () => (
   </IconBadge>
 );
 
-
 const LeafIcon = () => (
   <IconBadge>
     <FaLeaf className="h-7 w-7" />
