@@ -18,60 +18,6 @@ import {
 import { FaUtensils, FaCat } from "react-icons/fa";
 import { FaLeaf, FaBicycle } from "react-icons/fa6";
 
-const BuildingIcon = () => (
-  <IconBadge>
-    <HiOutlineBuildingOffice2 className="h-7 w-7" />
-  </IconBadge>
-);
-
-const LeafIcon = () => (
-  <IconBadge>
-    <FaLeaf className="h-7 w-7" />
-  </IconBadge>
-);
-
-const HomeIcon = () => (
-  <IconBadge>
-    <HiOutlineHome className="h-7 w-7" />
-  </IconBadge>
-);
-
-const HeartIcon = () => (
-  <IconBadge>
-    <HiOutlineHeart className="h-7 w-7" />
-  </IconBadge>
-);
-
-const UtensilsIcon = () => (
-  <IconBadge>
-    <FaUtensils className="h-6 w-6" />
-  </IconBadge>
-);
-
-const ShieldIcon = () => (
-  <IconBadge>
-    <HiOutlineShieldCheck className="h-7 w-7" />
-  </IconBadge>
-);
-
-const CatIcon = () => (
-  <IconBadge>
-    <FaCat className="h-6 w-6" />
-  </IconBadge>
-);
-
-const BikeIcon = () => (
-  <IconBadge>
-    <FaBicycle className="h-6 w-6" />
-  </IconBadge>
-);
-
-const CheckIcon = () => (
-  <IconBadge>
-    <HiOutlineCheckCircle className="h-7 w-7" />
-  </IconBadge>
-);
-
 const SearchIcon = () => (
   <HiOutlineMagnifyingGlass className="h-5 w-5 text-emerald-200" aria-hidden />
 );
@@ -91,18 +37,27 @@ const IconFrame = ({ children, className }: { children: ReactNode; className?: s
   </svg>
 );
 
-const IconBadge = ({ children }: { children: ReactNode }) => (
-  <div
-    className="
-      grid h-12 w-12 place-items-center shrink-0
-      rounded-2xl border border-white/12
-      bg-white/80 text-emerald-600
-      shadow-[0_10px_40px_rgba(0,0,0,0.22)]
-    "
-  >
-    {children}
-  </div>
-);
+type IconBadgeProps = {
+  icon: React.ElementType;
+  size?: "sm" | "md";
+};
+
+const IconBadge = ({ icon: Icon, size = "md" }: IconBadgeProps) => {
+  const sizeClass = size === "sm" ? "h-6 w-6" : "h-7 w-7";
+
+  return (
+    <div
+      className="
+        grid h-12 w-12 place-items-center shrink-0
+        rounded-2xl border border-white/12
+        bg-white/80 text-emerald-600
+        shadow-[0_10px_40px_rgba(0,0,0,0.22)]
+      "
+    >
+      <Icon className={sizeClass} />
+    </div>
+  );
+};
 
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <IconFrame className={className}>
@@ -112,15 +67,15 @@ const ArrowUpRightIcon = ({ className }: { className?: string }) => (
 );
 
 const iconComponents = {
-  foundation: BuildingIcon,
-  environment: LeafIcon,
-  housing: HomeIcon,
-  youth: HeartIcon,
-  food: UtensilsIcon,
-  mentalHealth: ShieldIcon,
-  rescue: CatIcon,
-  transport: BikeIcon,
-  verification: CheckIcon,
+  foundation: { icon: HiOutlineBuildingOffice2, size: "md" },
+  environment: { icon: FaLeaf, size: "md" },
+  housing: { icon: HiOutlineHome, size: "md" },
+  youth: { icon: HiOutlineHeart, size: "md" },
+  food: { icon: FaUtensils, size: "sm" },
+  mentalHealth: { icon: HiOutlineShieldCheck, size: "md" },
+  rescue: { icon: FaCat, size: "sm" },
+  transport: { icon: FaBicycle, size: "sm" },
+  verification: { icon: HiOutlineCheckCircle, size: "md" },
 } as const;
 
 type IconName = keyof typeof iconComponents;
@@ -355,7 +310,8 @@ export default function DonatePage() {
             )}
 
             {filteredOrganizations.map((organization) => {
-              const Icon = iconComponents[organization.icon];
+              const iconMeta = iconComponents[organization.icon];
+
               return (
                 <Card
                   key={organization.name}
@@ -375,19 +331,19 @@ export default function DonatePage() {
                   <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                      <div className="mt-0.5 shrink-0">
-                        <Icon />
-                      </div>
+                        <div className="mt-0.5 shrink-0">
+                          <IconBadge icon={iconMeta.icon} size={iconMeta.size} />
+                        </div>
 
-                      <div className="min-w-0 space-y-0.5">
-                        <CardTitle className="text-2xl leading-snug text-white">
-                          {organization.name}
-                        </CardTitle>
-                        <CardDescription className="text-slate-200/85">
-                          {organization.focus}
-                        </CardDescription>
+                        <div className="min-w-0 space-y-0.5">
+                          <CardTitle className="text-2xl leading-snug text-white">
+                            {organization.name}
+                          </CardTitle>
+                          <CardDescription className="text-slate-200/85">
+                            {organization.focus}
+                          </CardDescription>
+                        </div>
                       </div>
-                    </div>
 
                       <Badge className="shrink-0 whitespace-nowrap bg-emerald-500/12 text-emerald-100 ring-emerald-300/30">
                         CRA Registered
