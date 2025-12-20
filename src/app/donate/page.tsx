@@ -105,7 +105,6 @@ const IconBadge = ({ children }: { children: ReactNode }) => (
   </div>
 );
 
-
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <IconFrame className={className}>
     <path d="M7 17 17 7" />
