@@ -222,19 +222,23 @@ export default function MissionPage() {
                 Open Source
               </Badge>
               <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                Built in public, so trust is earned.
+                Built in public 
               </h2>
               <p className="text-lg text-slate-200">
-                Status and roadmap are public — and the code is open for anyone to inspect.
+                The code is open for anyone to inspect.
               </p>
             </div>
 
-            <Card className="border border-white/10 bg-slate-950/40">
-
-
+            <Card
+              className="
+                border border-white/10 bg-slate-950/40
+                cursor-default
+                hover:border-white/10
+                hover:bg-slate-950/40
+                hover:shadow-none
+                [&:hover]:translate-y-0
+              ">
               <CardContent>
-                
-
                   <div className="flex flex-col items-center justify-center space-y-4">
                     <Link
                       href="https://github.com/gmook9/helpingCanada"
@@ -257,9 +261,14 @@ export default function MissionPage() {
                       </svg>
                     </Link>
 
-                    <div className="rounded-2xl border border-emerald-200/40 bg-gradient-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-2 text-center text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)] transition">
+                    <Link
+                      href="https://github.com/gmook9/helpingCanada"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-2xl border border-emerald-200/40 bg-linear-to-r from-emerald-500/20 via-emerald-400/10 to-sky-500/20 px-5 py-2 text-center text-sm text-emerald-100 shadow-[0_15px_40px_rgba(16,185,129,0.25)] transition hover:border-emerald-200 hover:bg-emerald-500/10"
+                    >
                       Open source
-                    </div>
+                    </Link>
                   </div>
               </CardContent>
             </Card>
