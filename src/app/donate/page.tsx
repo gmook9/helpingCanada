@@ -255,8 +255,7 @@ export default function DonatePage() {
                 Donate with confidence to organizations rooted in the community.
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
-                Each nonprofit below is based in Metro Vancouver, registered, and known for transparent governance. Combine a few to
-                balance urgent relief with long-term systems change.
+                Each nonprofit below is based in Vancouver and serves local communities.
               </p>
               <p className="text-sm text-slate-300">
                 <a
@@ -275,8 +274,9 @@ export default function DonatePage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-colors hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-colors hover:bg-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
                 >
+                  <HiOutlineHome className="h-6 w-6" />
                   Return home
                 </Link>
                 <Link href="/mission">
