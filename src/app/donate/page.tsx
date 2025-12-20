@@ -376,17 +376,20 @@ export default function DonatePage() {
                 >
                   <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-start gap-4">
+                      <div className="mt-0.5 shrink-0">
                         <Icon />
-                        <div className="space-y-0.5">
-                          <CardTitle className="text-2xl text-white">
-                            {organization.name}
-                          </CardTitle>
-                          <CardDescription className="text-slate-200/85">
-                            {organization.focus}
-                          </CardDescription>
-                        </div>
                       </div>
+
+                      <div className="min-w-0 space-y-0.5">
+                        <CardTitle className="text-2xl leading-snug text-white">
+                          {organization.name}
+                        </CardTitle>
+                        <CardDescription className="text-slate-200/85">
+                          {organization.focus}
+                        </CardDescription>
+                      </div>
+                    </div>
 
                       <Badge className="shrink-0 whitespace-nowrap bg-emerald-500/12 text-emerald-100 ring-emerald-300/30">
                         CRA Registered
