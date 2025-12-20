@@ -7,111 +7,110 @@ import DotGrid from "@/components/DotGrid";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  HiOutlineBuildingOffice2,
+  HiOutlineHome,
+  HiOutlineHeart,
+  HiOutlineShieldCheck,
+  HiOutlineCheckCircle,
+  HiOutlineMagnifyingGlass,
+} from "react-icons/hi2";
+import { FaUtensils, FaCat } from "react-icons/fa";
+import { FaLeaf, FaBicycle } from "react-icons/fa6";
+
+const BuildingIcon = () => (
+  <IconBadge>
+    <HiOutlineBuildingOffice2 className="h-7 w-7" />
+  </IconBadge>
+);
+
+
+const LeafIcon = () => (
+  <IconBadge>
+    <FaLeaf className="h-7 w-7" />
+  </IconBadge>
+);
+
+const HomeIcon = () => (
+  <IconBadge>
+    <HiOutlineHome className="h-7 w-7" />
+  </IconBadge>
+);
+
+const HeartIcon = () => (
+  <IconBadge>
+    <HiOutlineHeart className="h-7 w-7" />
+  </IconBadge>
+);
+
+const UtensilsIcon = () => (
+  <IconBadge>
+    <FaUtensils className="h-6 w-6" />
+  </IconBadge>
+);
+
+const ShieldIcon = () => (
+  <IconBadge>
+    <HiOutlineShieldCheck className="h-7 w-7" />
+  </IconBadge>
+);
+
+const CatIcon = () => (
+  <IconBadge>
+    <FaCat className="h-6 w-6" />
+  </IconBadge>
+);
+
+const BikeIcon = () => (
+  <IconBadge>
+    <FaBicycle className="h-6 w-6" />
+  </IconBadge>
+);
+
+const CheckIcon = () => (
+  <IconBadge>
+    <HiOutlineCheckCircle className="h-7 w-7" />
+  </IconBadge>
+);
+
+const SearchIcon = () => (
+  <HiOutlineMagnifyingGlass className="h-5 w-5 text-emerald-200" aria-hidden />
+);
 
 const IconFrame = ({ children, className }: { children: ReactNode; className?: string }) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.8"
+    strokeWidth="1.9"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={className || "h-6 w-6 text-emerald-700"}
+    className={className || "h-4 w-4"}
     aria-hidden
   >
     {children}
   </svg>
 );
 
+const IconBadge = ({ children }: { children: ReactNode }) => (
+  <div
+    className="
+      grid h-12 w-12 place-items-center shrink-0
+      rounded-2xl border border-white/12
+      bg-white/80 text-emerald-600
+      shadow-[0_10px_40px_rgba(0,0,0,0.22)]
+    "
+  >
+    {children}
+  </div>
+);
+
+
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <IconFrame className={className}>
     <path d="M7 17 17 7" />
     <path d="M7 7h10v10" />
   </IconFrame>
-);
-
-const BuildingIcon = () => (
-  <IconFrame>
-    <rect x="4" y="3" width="16" height="18" rx="2" />
-    <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h6M12 21v-4" />
-  </IconFrame>
-);
-
-const LeafIcon = () => (
-  <IconFrame>
-    <path d="M5 13c0-5 4-9 7-9s7 4 7 9-4 9-7 9-7-4-7-9Z" />
-    <path d="M12 4v16" />
-  </IconFrame>
-);
-
-const HomeIcon = () => (
-  <IconFrame>
-    <path d="M4 11 12 5l8 6" />
-    <path d="M5 10v10h14V10" />
-    <path d="M10 20v-5h4v5" />
-  </IconFrame>
-);
-
-const HeartIcon = () => (
-  <IconFrame>
-    <path d="M12 20s-7-4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6-7 10-7 10Z" />
-  </IconFrame>
-);
-
-const UtensilsIcon = () => (
-  <IconFrame>
-    <path d="M5 4v8" />
-    <path d="M9 4v8" />
-    <path d="M5 12c0 4 4 4 4 0" />
-    <path d="M13 4h4v6a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2Z" />
-    <path d="M15 12v8" />
-  </IconFrame>
-);
-
-const ShieldIcon = () => (
-  <IconFrame>
-    <path d="M12 21c-5-2-7-4.8-7-10V6l7-3 7 3v5c0 5.2-2 8-7 10Z" />
-  </IconFrame>
-);
-
-const CatIcon = () => (
-  <IconFrame>
-    <path d="M5 7V4l3 2 4-2 4 2 3-2v3" />
-    <path d="M6 12c0 5 3 8 6 8s6-3 6-8" />
-    <path d="M9 13h.01M15 13h.01" />
-    <path d="M9 17s1.5 1 3 1 3-1 3-1" />
-  </IconFrame>
-);
-
-const BikeIcon = () => (
-  <IconFrame>
-    <circle cx="6.5" cy="17.5" r="3.5" />
-    <circle cx="17.5" cy="17.5" r="3.5" />
-    <path d="M6 17.5 10 8h4l3 6.5" />
-    <path d="M10 8 8 13h6" />
-  </IconFrame>
-);
-
-const CheckIcon = () => (
-  <IconFrame>
-    <path d="m5.5 12.5 3.5 3.5 9-9" />
-  </IconFrame>
-);
-
-const SearchIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-5 w-5 text-emerald-200"
-    aria-hidden
-  >
-    <circle cx="11" cy="11" r="7" />
-    <path d="m16.5 16.5 4 4" />
-  </svg>
 );
 
 const iconComponents = {
@@ -378,16 +377,7 @@ export default function DonatePage() {
                   <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        <div
-                          className="
-                            rounded-2xl border border-white/12
-                            bg-white/80 p-3 text-emerald-400
-                            shadow-[0_10px_40px_rgba(0,0,0,0.22)]
-                          "
-                        >
-                          <Icon />
-                        </div>
-
+                        <Icon />
                         <div className="space-y-0.5">
                           <CardTitle className="text-2xl text-white">
                             {organization.name}
@@ -432,7 +422,7 @@ export default function DonatePage() {
                         className="inline-flex items-center gap-2"
                       >
                         Donate
-                        <ArrowUpRightIcon className="h-4 w-4 text-white/90" />
+                        <ArrowUpRightIcon className="h-4 w-4 text-white" />
                       </a>
                     </Button>
                   </CardContent>
