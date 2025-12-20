@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-const IconFrame = ({ children }: { children: ReactNode }) => (
+const IconFrame = ({ children, className }: { children: ReactNode; className?: string }) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
@@ -16,15 +16,15 @@ const IconFrame = ({ children }: { children: ReactNode }) => (
     strokeWidth="1.8"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="h-6 w-6 text-emerald-700"
+    className={className || "h-6 w-6 text-emerald-700"}
     aria-hidden
   >
     {children}
   </svg>
 );
 
-const ArrowUpRightIcon = () => (
-  <IconFrame>
+const ArrowUpRightIcon = ({ className }: { className?: string }) => (
+  <IconFrame className={className}>
     <path d="M7 17 17 7" />
     <path d="M7 7h10v10" />
   </IconFrame>
@@ -362,31 +362,68 @@ export default function DonatePage() {
               return (
                 <Card
                   key={organization.name}
-                  className="group flex w-full max-w-xl flex-col justify-between border border-slate-200 bg-white text-slate-900 shadow-lg transition duration-300 hover:border-emerald-200 hover:shadow-emerald-200/40 md:max-w-none"
+                  className="
+                    group flex w-full max-w-xl flex-col justify-between
+                    rounded-3xl border bg-blue-950/90 border-white/12
+                    bg-linear-to-b from-white/15 via-white/10 to-white/4
+                    text-slate-100 backdrop-blur-xl
+                    shadow-[0_18px_70px_rgba(0,0,0,0.38)]
+                    transition duration-300
+                    hover:border-emerald-200/35
+                    hover:from-slate-900/62 hover:via-slate-950/40 hover:to-slate-950/25
+                    hover:shadow-[0_22px_80px_rgba(16,185,129,0.16)]
+                    md:max-w-none
+                  "
                 >
                   <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+                        <div
+                          className="
+                            rounded-2xl border border-white/12
+                            bg-white/80 p-3 text-emerald-400
+                            shadow-[0_10px_40px_rgba(0,0,0,0.22)]
+                          "
+                        >
                           <Icon />
                         </div>
-                        <div>
-                          <CardTitle className="text-2xl">{organization.name}</CardTitle>
-                          <CardDescription className="text-slate-600">{organization.focus}</CardDescription>
+
+                        <div className="space-y-0.5">
+                          <CardTitle className="text-2xl text-white">
+                            {organization.name}
+                          </CardTitle>
+                          <CardDescription className="text-slate-200/85">
+                            {organization.focus}
+                          </CardDescription>
                         </div>
                       </div>
-                      <Badge className="flex-shrink-0 whitespace-nowrap bg-emerald-50 text-emerald-700 ring-emerald-200">
+
+                      <Badge className="shrink-0 whitespace-nowrap bg-emerald-500/12 text-emerald-100 ring-emerald-300/30">
                         CRA Registered
                       </Badge>
                     </div>
-                    <p className="text-base text-slate-700">{organization.description}</p>
+
+                    <p className="text-base leading-relaxed text-slate-100/80">
+                      {organization.description}
+                    </p>
                   </CardHeader>
 
-                  <CardContent className="flex flex-col gap-4 border-t border-slate-100 pt-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-slate-700">{organization.impact}</p>
+                  <CardContent className="flex flex-col gap-4 border-t border-white/10 pt-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-slate-100/75">
+                      {organization.impact}
+                    </p>
+
                     <Button
                       variant="solid"
-                      className="bg-emerald-600 text-white hover:bg-emerald-500 group-hover:bg-emerald-500"
+                      className="
+                        h-10 rounded-full
+                        bg-emerald-600 text-white
+                        px-4 text-sm font-semibold
+                        shadow-[0_10px_26px_rgba(16,185,129,0.30)]
+                        transition
+                        hover:bg-emerald-500
+                        focus-visible:ring-2 focus-visible:ring-emerald-300/60 focus-visible:ring-offset-0
+                      "
                     >
                       <a
                         href={organization.url}
@@ -394,8 +431,8 @@ export default function DonatePage() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2"
                       >
-                        Donate now
-                        <ArrowUpRightIcon />
+                        Donate
+                        <ArrowUpRightIcon className="h-4 w-4 text-white/90" />
                       </a>
                     </Button>
                   </CardContent>
