@@ -203,7 +203,7 @@ export default function MissionPage() {
                       sizes="(max-width: 768px) 100vw, 300px"
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-slate-950/55" />
+                    <div className="absolute inset-0 bg-slate-950/60" />
                     <div className="absolute inset-x-0 bottom-0 p-6">
                       <p className="text-sm uppercase tracking-[0.25em] text-emerald-200">
                         {scene.title}
