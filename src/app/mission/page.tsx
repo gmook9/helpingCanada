@@ -201,7 +201,7 @@ export default function MissionPage() {
                     alt={scene.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 300px"
-                    className="object-cover rounded-lg"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-slate-950/60" />
                       <div className="absolute inset-x-0 top-0 p-6">
