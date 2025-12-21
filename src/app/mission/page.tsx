@@ -194,7 +194,7 @@ export default function MissionPage() {
 
             <div className="grid gap-6 md:grid-cols-3">
               {vancouverScenes.map((scene) => (
-                <Card key={scene.title} className="overflow-hidden border border-white/10">
+                <Card key={scene.title} className="overflow-hidden border border-white/10 bg-slate-800/40 backdrop-blur-xl">
                   <div className="relative h-64">
                     <Image
                       src={scene.src}
