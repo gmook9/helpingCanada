@@ -194,21 +194,23 @@ export default function MissionPage() {
 
             <div className="grid gap-6 md:grid-cols-3">
               {vancouverScenes.map((scene) => (
-                <Card key={scene.title} className="overflow-hidden border border-white/10">
+                <Card key={scene.title} className="overflow-hidden border border-white/10 bg-slate-800/40 backdrop-blur-xl">
                   <div className="relative h-64">
-                    <Image
-                      src={scene.src}
-                      alt={scene.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 300px"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-slate-950/55" />
-                    <div className="absolute inset-x-0 bottom-0 p-6">
+                  <Image
+                    src={scene.src}
+                    alt={scene.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/60" />
+                      <div className="absolute inset-x-0 top-0 p-6">
                       <p className="text-sm uppercase tracking-[0.25em] text-emerald-200">
                         {scene.title}
                       </p>
-                      <p className="text-base text-slate-100">{scene.description}</p>
+                      <p className="mt-2 text-base text-slate-100">
+                        {scene.description}
+                      </p>
                     </div>
                   </div>
                 </Card>
