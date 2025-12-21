@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import DotGrid from "@/components/DotGrid";
+import { HiOutlineHome } from "react-icons/hi2";
 
 const vancouverScenes = [
   {
@@ -118,6 +119,7 @@ export default function MissionPage() {
                     href="/"
                     className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-sky-500 px-8 py-4 text-lg font-semibold text-white shadow-[0_15px_35px_rgba(6,95,70,0.35)] transition hover:brightness-110"
                   >
+                    <HiOutlineHome className="h-6 w-6 mr-2" />
                     Back to home
                   </Link>
                   <Link
