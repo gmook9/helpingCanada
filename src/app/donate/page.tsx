@@ -272,12 +272,15 @@ export default function DonatePage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-colors hover:bg-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-                >
-                  <HiOutlineHome className="h-6 w-6" />
-                  Return home
+                <Link href="/">
+                  <Button
+                    variant="solid"
+                    size="lg"
+                    className="bg-emerald-600 text-white hover:bg-emerald-500"
+                    >
+                    <HiOutlineHome className="h-6 w-6 mr-2" />
+                    Return home
+                  </Button>
                 </Link>
                 <Link href="/mission">
                   <Button
