@@ -33,7 +33,7 @@ export default function Home() {
         <div
           className="
             absolute inset-0
-            opacity-[0.24]
+            opacity-[0.22]
             mask-[radial-gradient(circle_at_50%_35%,black_0%,black_55%,transparent_78%)]
           "
         >
