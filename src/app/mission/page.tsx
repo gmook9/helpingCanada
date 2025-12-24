@@ -68,7 +68,7 @@ export default function MissionPage() {
         <div
           className="
             absolute inset-0
-            opacity-[0.18]
+            opacity-[0.20]
             mask-[radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
           "
         >
