@@ -11,6 +11,9 @@ import { AiOutlineForm } from "react-icons/ai";
 import { GoReport } from "react-icons/go";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
+// Flag Icon - https://gitlab.com/catamphetamine/country-flag-icons#readme
+import US from 'country-flag-icons/react/3x2/US'
+
 export default function Home() {
   const highlights = [
     {
@@ -256,6 +259,10 @@ export default function Home() {
           <IoIosInformationCircleOutline className="inline h-5 w-5 mr-1" />
             HelpingCanada.org is an independent project and not affiliated with the Government of Canada. We link directly to verified
             charities and do not collect donations.
+          </p>
+          <p className="mt-4 text-slate-300 text-center">
+            <US className="inline h-5 w-5 mr-2" />
+            Made in USA with ❤️
           </p>
         </footer>
       </div>
