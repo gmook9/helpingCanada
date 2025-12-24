@@ -10,7 +10,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import DotGrid from "@/components/DotGrid";
+
+// Icons - https://react-icons.github.io/react-icons
 import { HiOutlineHome } from "react-icons/hi2";
+import { BiDonateHeart } from "react-icons/bi";
 
 const vancouverScenes = [
   {
@@ -68,7 +71,7 @@ export default function MissionPage() {
         <div
           className="
             absolute inset-0
-            opacity-[0.18]
+            opacity-[0.2]
             mask-[radial-gradient(circle_at_50%_30%,black_0%,black_55%,transparent_80%)]
           "
         >
@@ -122,12 +125,13 @@ export default function MissionPage() {
                     <HiOutlineHome className="h-6 w-6 mr-2" />
                     Back to home
                   </Link>
-                  <Link
+                    <Link
                     href="/donate"
                     className="inline-flex min-w-[180px] flex-1 items-center justify-center rounded-full border border-white/30 bg-white/5 px-8 py-4 text-lg font-semibold text-white backdrop-blur transition hover:border-emerald-200 hover:text-emerald-100"
-                  >
+                    >
+                    <BiDonateHeart className="h-6 w-6 mr-2" />
                     Explore donations
-                  </Link>
+                    </Link>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-3">
@@ -248,7 +252,7 @@ export default function MissionPage() {
                       href="https://github.com/gmook9/helpingCanada"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-white/20 bg-white/5 p-4 transition hover:border-emerald-200 hover:bg-emerald-500/10"
+                      className="rounded-full border border-white/20 bg-white/5 p-4 transition hover:border-emerald-200 hover:bg-emerald-500/10 hover:animate-pulse"
                     >
                       <svg
                         width="32"

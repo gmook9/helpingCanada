@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import DotGrid from "@/components/DotGrid";
 
+// Icons - https://react-icons.github.io/react-icons
+import { AiOutlineForm } from "react-icons/ai";
+import { GoReport } from "react-icons/go";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+
+// Flag Icon - https://gitlab.com/catamphetamine/country-flag-icons#readme
+import US from 'country-flag-icons/react/3x2/US'
+
 export default function Home() {
   const highlights = [
     {
@@ -226,6 +234,7 @@ export default function Home() {
                     size="lg"
                     className="border-white/30 text-white hover:border-emerald-300 hover:bg-white/10 hover:text-emerald-100"
                   >
+                    <AiOutlineForm  className="h-5 w-5 mr-2" />
                     Recommend a Charity
                   </Button>
                 </Link>
@@ -236,6 +245,7 @@ export default function Home() {
                     size="lg"
                     className="text-emerald-200 transition hover:bg-white/10 hover:text-emerald-100"
                   >
+                    <GoReport   className="h-5 w-5 mr-2" />
                     Report an Issue
                   </Button>
                 </Link>
@@ -246,8 +256,13 @@ export default function Home() {
 
         <footer className="mx-auto w-full max-w-6xl px-6 pb-12 text-xs leading-6 text-slate-400 sm:px-10 lg:px-16">
           <p className="border-t border-white/10 pt-6">
+          <IoIosInformationCircleOutline className="inline h-5 w-5 mr-1" />
             HelpingCanada.org is an independent project and not affiliated with the Government of Canada. We link directly to verified
             charities and do not collect donations.
+          </p>
+          <p className="mt-4 text-slate-300 text-center">
+            <US className="inline h-5 w-5 mr-2" />
+            Made in USA with ❤️
           </p>
         </footer>
       </div>
