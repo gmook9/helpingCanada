@@ -248,7 +248,7 @@ export default function MissionPage() {
                       href="https://github.com/gmook9/helpingCanada"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-white/20 bg-white/5 p-4 transition hover:border-emerald-200 hover:bg-emerald-500/10"
+                      className="rounded-full border border-white/20 bg-white/5 p-4 transition hover:border-emerald-200 hover:bg-emerald-500/10 hover:animate-pulse"
                     >
                       <svg
                         width="32"
