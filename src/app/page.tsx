@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Dotgrid Background - https://www.reactbits.dev/backgrounds/dot-grid
 import DotGrid from "@/components/DotGrid";
 
 // Icons - https://react-icons.github.io/react-icons
