@@ -15,20 +15,21 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import US from 'country-flag-icons/react/3x2/US'
 
 export default function Home() {
-const highlights = [
-  {
-    title: "No referrals",
-    label: "Trust",
-  },
-  {
-    title: "Privacy first",
-    label: "Safety",
-  },
-  {
-    title: "Built for impact",
-    label: "Impact",
-  },
-];
+  const highlights = [
+    {
+      title: "No referrals",
+      label: "Trust",
+    },
+    {
+      title: "Privacy first",
+      label: "Safety",
+    },
+    {
+      title: "Built for impact",
+      label: "Impact",
+    },
+  ];
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       {/* Background layer */}
@@ -179,7 +180,6 @@ const highlights = [
                     <h3 className="relative mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl">
                       {highlight.title}
                     </h3>
-                    <p className="relative mt-3 text-sm leading-6 text-slate-200">{highlight.description}</p>
                   </div>
                 ))}
               </div>
