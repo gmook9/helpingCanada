@@ -15,24 +15,20 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import US from 'country-flag-icons/react/3x2/US'
 
 export default function Home() {
-  const highlights = [
-    {
-      title: "No referrals",
-      description: "No commissions, sponsorships, referral payouts, or hidden agendas. Just trusted causes.",
-      label: "Trust",
-    },
-    {
-      title: "Privacy first",
-      description: "We never collect donor data or track browsing behaviour. Your intent to help stays yours.",
-      label: "Safety",
-    },
-    {
-      title: "Built for impact",
-      description: "Curated listings help your support reach people faster, with transparent sourcing and updates.",
-      label: "Impact",
-    },
-  ];
-
+const highlights = [
+  {
+    title: "No referrals",
+    label: "Trust",
+  },
+  {
+    title: "Privacy first",
+    label: "Safety",
+  },
+  {
+    title: "Built for impact",
+    label: "Impact",
+  },
+];
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       {/* Background layer */}
