@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Dotgrid Background - https://www.reactbits.dev/backgrounds/dot-grid
 import DotGrid from "@/components/DotGrid";
 
 // Icons - https://react-icons.github.io/react-icons
@@ -18,17 +20,14 @@ export default function Home() {
   const highlights = [
     {
       title: "No referrals",
-      description: "No commissions, sponsorships, referral payouts, or hidden agendas. Just trusted causes.",
       label: "Trust",
     },
     {
       title: "Privacy first",
-      description: "We never collect donor data or track browsing behaviour. Your intent to help stays yours.",
       label: "Safety",
     },
     {
       title: "Built for impact",
-      description: "Curated listings help your support reach people faster, with transparent sourcing and updates.",
       label: "Impact",
     },
   ];
@@ -183,7 +182,6 @@ export default function Home() {
                     <h3 className="relative mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl">
                       {highlight.title}
                     </h3>
-                    <p className="relative mt-3 text-sm leading-6 text-slate-200">{highlight.description}</p>
                   </div>
                 ))}
               </div>
